@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
+import {withRouter} from 'react-router-dom'
 import './App.css';
 import { Route, Switch } from 'react-router'
-import SignUp from 'SignUp'
-import Home from './HomeComponents/HomeContainer'
+import SignUp from './SignUp'
+import HomeContainer from './HomeComponents/HomeContainer'
 import ProfileContainer from './ProfileComponents/ProfileContainer'
 import ShowContainer from './DestinationComponents/ShowContainer'
+import Header from './Header.jsx'
+import DropDown from './DropDown.jsx'
+
 
 class App extends Component {
 
@@ -20,18 +24,19 @@ class App extends Component {
 
     return (
       <div>
-       <Switch>
-        <Header />
-        <DropDown />
-        <Route exact path='/' component={ Home } />
-        <Route path='/profile/:id' render={ this.renderProfileCont } />
-        <Route path='/signup' component={ SignUp } />
-        <Route path='/:destination' render={ this.renderDestinationCont } />
-       </Switch>
+        <Switch>
+           <Header />
+           <DropDown />
+           <Route path='/' component={ HomeContainer } />
+           <Route path='/profile/:id' render={ this.renderProfileCont } />
+           <Route path='/:destination' render={ this.renderDestinationCont } />
+           <Route path='/signup' component={ SignUp } />
+        </Switch>
+
       </div>
     )
   }
 }
 
 
-export default App;
+export default withRouter(App);
