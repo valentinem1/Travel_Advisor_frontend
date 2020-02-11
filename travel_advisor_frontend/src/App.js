@@ -22,12 +22,11 @@ class App extends Component {
   }
 
   // setting the state with the newUser data coming from SignUp.js form
-
   // .user & .token coming from back end in UserController {user: UserSerializer(@user), token: @token}
   createNewUser = (newUser) => {
     this.setState({
       users: newUser.user,
-      token: newUser.token 
+      token: newUser.token
     })
   }
 
@@ -35,11 +34,11 @@ class App extends Component {
     console.log(this.state.users)
     return (
 
-    
+
       <div>
            <Header />
            <DropDown />
-           
+
         <Switch>
            <Route exact path='/' component={ HomeContainer } />
            <Route exact path='/profile' component={ ProfileContainer } />
@@ -47,7 +46,7 @@ class App extends Component {
            <Route exact path='/:destination' render={ this.renderDestinationCont } />
         </Switch>
       </div>
-      
+
     )
   }
 
