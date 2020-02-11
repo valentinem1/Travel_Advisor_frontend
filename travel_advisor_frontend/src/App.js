@@ -31,10 +31,10 @@ class App extends Component {
   }
 
   renderDestination = (routerProps) => {
-    console.log(routerProps)
+    // console.log(routerProps)
     let destinationName = routerProps.match.params.name
     let foundDestination = this.state.destinations.find(destinationObj => destinationObj.name === destinationName)
-    return (foundDestination ? <ShowContainer destination={foundDestination}/> : <NotFound/>)
+    return (foundDestination ? <ShowContainer destinations={this.state.destinations} destination={foundDestination}/> : <NotFound/>)
   }
 
   // setting the state with the newUser data coming from SignUp.js form
@@ -59,7 +59,7 @@ class App extends Component {
     })
     .then(r => r.json())
     .then(userData => {
-      console.log(userData)
+      // console.log(userData)
       if(!userData.error){
         localStorage.token = userData.token
       }
