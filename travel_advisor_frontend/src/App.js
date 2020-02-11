@@ -6,7 +6,7 @@ import SignUp from './SignUp'
 import HomeContainer from './HomeComponents/HomeContainer'
 import ProfileContainer from './ProfileComponents/ProfileContainer'
 import ShowContainer from './DestinationComponents/ShowContainer'
-import Header from './Header.jsx'
+import HeaderContainer from './HeaderContainer.jsx'
 import DropDown from './DropDown.jsx'
 
 
@@ -14,7 +14,18 @@ class App extends Component {
 
   state={
     users: {},
-    token: ""
+    token: "",
+    destinations:[]
+  }
+
+  componentDidMount() {
+    fetch(`http://localhost:4000/destinations`)
+    .then(r => r.json())
+    .then((destinations) => {
+      this.setState({
+        destinations
+      })
+    })
   }
 
   renderDestinationCont = (routerProps) => {
@@ -22,12 +33,11 @@ class App extends Component {
   }
 
   // setting the state with the newUser data coming from SignUp.js form
-
   // .user & .token coming from back end in UserController {user: UserSerializer(@user), token: @token}
   createNewUser = (newUser) => {
     this.setState({
       users: newUser.user,
-      token: newUser.token 
+      token: newUser.token
     })
   }
 
@@ -47,21 +57,22 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.users)
+    // console.log(this.state.users)
+    // console.log(this.state.destinations);
     return (
 
       <div>
-           <Header />
+           <HeaderContainer />
            <DropDown />
-           
+
         <Switch>
-           <Route exact path='/' render={ () => <HomeContainer loginUser={this.loginUser} />} />
+           <Route exact path='/' render={ () => <HomeContainer destinations={this.state.destinations} loginUser={this.loginUser} />} />
            <Route exact path='/profile' component={ ProfileContainer } />
            <Route exact path='/signup' render={ (routerProps) => <SignUp createNewUser={this.createNewUser} routerProps={routerProps} /> }/>
            <Route exact path='/:destination' render={ this.renderDestinationCont } />
         </Switch>
       </div>
-      
+
     )
   }
 
