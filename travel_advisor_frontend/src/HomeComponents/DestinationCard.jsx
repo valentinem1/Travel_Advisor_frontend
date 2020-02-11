@@ -8,18 +8,18 @@ class DestinationCard extends Component {
     return (
 
         <div className="ui card">
-          <div className="image"><img src={photo} /></div>
+          <div className="image"><img src={photo} alt={name} /></div>
           <div className="content">
             <div className="header">{name}</div>
             <div className="meta"><span className="date">{trip_type}</span></div>
             <div className="description">{bio}</div>
           </div>
-          <div className="extra content">
+          {/* <div className="extra content">
             <a>
               <i aria-hidden="true" className="user icon"></i>
               Lol
             </a>
-           </div>
+           </div> */}
         </div>
     );
   }

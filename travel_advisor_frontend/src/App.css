@@ -16,3 +16,6 @@
   background-color: bisque;
   width: 10vw;
 }
+.ui.card:hover{
+  cursor: pointer;
+}
