@@ -31,10 +31,11 @@ class App extends Component {
   }
 
   renderDestination = (routerProps) => {
-    // console.log(routerProps)
+    console.log(routerProps)
     let destinationName = routerProps.match.params.name
+
     let foundDestination = this.state.destinations.find(destinationObj => destinationObj.name === destinationName)
-    return (foundDestination ? <ShowContainer destinations={this.state.destinations} destination={foundDestination}/> : <NotFound/>)
+    return (foundDestination ? <ShowContainer destination={foundDestination}/> : <NotFound/>)
   }
 
   // setting the state with the newUser data coming from SignUp.js form
@@ -76,7 +77,7 @@ class App extends Component {
       }
     })
   }
-  
+
   filterSearch = () => {
     let newArr = this.state.destinations.filter( destination => {
       let searchValue = this.state.search.toLowerCase()
@@ -94,9 +95,9 @@ class App extends Component {
            <HeaderContainer />
 
         <Switch>
-           <Route exact path='/' render={ () => <HomeContainer 
-           destinations={this.filterSearch()} 
-           loginUser={this.loginUser} 
+           <Route exact path='/' render={ () => <HomeContainer
+           destinations={this.filterSearch()}
+           loginUser={this.loginUser}
            search={this.state.search}
            updateSearchForm={this.updateSearchForm}
            />} />

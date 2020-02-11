@@ -1,4 +1,4 @@
-.segment{
+.ui.inverted.segment{
   background-color: #D2B48C !important;
 }
 
@@ -18,4 +18,21 @@
 }
 .ui.card:hover{
   cursor: pointer;
+}
+
+
+
+.ui.centered.medium.image{
+width: 70vw;
+height: 59vh;
+font-size: 1rem;
+}
+
+/* have to add font family and size */
+.bio{
+  text-align: center;
+}
+
+.destName{
+  text-align: center;
 }

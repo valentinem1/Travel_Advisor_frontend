@@ -8,12 +8,13 @@ import ThingsToDoContainer from './ThingsToDoContainer'
 class ShowContainer extends Component {
 
   render() {
-    console.log(this.props.destinations)
-    let {name, photo, bio, trip_type} = this.props.destinations
+    // console.log(this.props.destination)
+    let {name, photo, bio, trip_type} = this.props.destination
+    console.log(name);
     return (
 
       <div>
-        <PhotoContainer photo={photo} bio={bio}/>
+        <PhotoContainer destination={this.props.destination}/>
         <ThingsToDoContainer />
         <CommentForm />
         <CommentContainer />
