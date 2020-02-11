@@ -18,7 +18,7 @@ class SignUp extends Component {
 
   // creating new user and giving it a new token. 
   // did fetch here for re-routing to home "/" due to App.js not knowing about routerProps.
-  handleSubmit=(evt)=>{
+  handleSubmit = (evt) => {
     evt.preventDefault()
     fetch('http://localhost:4000/users', {
       method: "POST",
@@ -30,7 +30,7 @@ class SignUp extends Component {
     })
     .then(r => r.json())
     .then(newUser => {
-      console.log(newUser)
+      // console.log(newUser)
       if (!newUser.error) {
         localStorage.setItem("token", newUser.token)
         // invoking createNewUser coming from App.js as callback functionwith the newUser instance as an argument to set the state in App.js.
