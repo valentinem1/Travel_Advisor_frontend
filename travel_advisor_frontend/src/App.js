@@ -30,17 +30,31 @@ class App extends Component {
     })
   }
 
+  loginUser = (user) => {
+    fetch('http://localhost:4000/login', {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "accept": "application/json"
+      },
+      body: JSON.stringify(
+        user
+      )
+    })
+    .then(r => r.json())
+    .then(console.log)
+  }
+
   render() {
     console.log(this.state.users)
     return (
-
 
       <div>
            <Header />
            <DropDown />
 
         <Switch>
-           <Route exact path='/' component={ HomeContainer } />
+           <Route exact path='/' render={ () => <HomeContainer loginUser={this.loginUser} />} />
            <Route exact path='/profile' component={ ProfileContainer } />
            <Route exact path='/signup' render={ (routerProps) => <SignUp createNewUser={this.createNewUser} routerProps={routerProps} /> }/>
            <Route exact path='/:destination' render={ this.renderDestinationCont } />
@@ -53,4 +67,4 @@ class App extends Component {
 }
 
 
-export default App;
+export default withRouter(App);
