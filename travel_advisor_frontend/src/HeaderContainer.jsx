@@ -21,6 +21,7 @@ class HeaderContainer extends Component {
               <Link to='/signup'><div  className="ui inverted button">
                   SignUp
              </div></Link>
+
         </div>
      </div>
  </div>
