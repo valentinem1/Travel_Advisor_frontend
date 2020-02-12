@@ -10,12 +10,13 @@ class ShowContainer extends Component {
   render() {
     // console.log(this.props.destination)
     let {name, photo, bio, trip_type} = this.props.destination
-    console.log(name);
+    // console.log(name);
     return (
 
       <div>
+        <i className="fas fa-plus"></i>
         <PhotoContainer destination={this.props.destination}/>
-        <ThingsToDoContainer />
+        <ThingsToDoContainer/>
         <CommentForm />
         <CommentContainer />
       </div>

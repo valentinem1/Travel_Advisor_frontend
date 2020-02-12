@@ -14,7 +14,7 @@ import DestinationCard from './HomeComponents/DestinationCard'
 class App extends Component {
 
   state={
-    users: {},
+    user: {},
     token: "",
     destinations:[],
     search: ""
@@ -42,11 +42,13 @@ class App extends Component {
   // .user & .token coming from back end in UserController {user: UserSerializer(@user), token: @token}
   createNewUser = (newUser) => {
     this.setState({
-      users: newUser.user,
+      user: newUser.user,
       token: newUser.token
     })
   }
 
+
+//Login
   loginUser = (user) => {
     fetch('http://localhost:4000/login', {
       method: "POST",
@@ -58,17 +60,45 @@ class App extends Component {
         user
       )
     })
+
     .then(r => r.json())
     .then(userData => {
-      // console.log(userData)
+      console.log(userData)
       if(!userData.error){
         localStorage.token = userData.token
-      }
-      this.setState({
-        users: userData.user
+        this.setState({
+          user: userData.user
       })
+      }
     })
-  }
+  }// end of login user
+// if the person is logged in or not
+
+componentDidMount() {
+  //everytime a page is refresed this component gets rendered
+  //so that the user does not get logged out
+  if (localStorage.getItem("token")){
+    let token = localStorage.getItem("token")
+  fetch(`http://localhost:4000/persist`, {
+    headers: {
+       "Authorization": `bearer ${token}`
+     }
+  })
+  .then(r => r.json())
+  .then((data) => {
+    console.log(data);
+    // if the token from the user exists then set the token here
+    if(data.token){
+      localStorage.setItem("token", data.token)
+      this.setState({
+          user: data.user,
+          token: data.token
+        })// end of setState
+    }// end of data if
+  })
+} //end of if
+}// end of componentDidMount
+
 
   updateSearchForm = (newValue) => {
     this.setState(prevState => {
@@ -87,12 +117,15 @@ class App extends Component {
   }
 
   render() {
-    // console.log(this.state.users)
+
+    console.log(this.state.user)
     // console.log(this.state.destinations);
     return (
 
       <div>
+
            <HeaderContainer />
+
 
         <Switch>
            <Route exact path='/' render={ () => <HomeContainer
