@@ -7,7 +7,7 @@ class DestinationContainer extends Component {
   render() {
   // console.log(this.props.destinations);
   let destinationCard = this.props.destinations.map(destination =>
-     <Link key={destination.id} to={`/${destination.name}`}><DestinationCard key={destination.id} destination={destination}/></Link>)
+     <Link key={destination.id} to={`/${destination.name}/${destination.id}`}><DestinationCard key={destination.id} destination={destination}/></Link>)
 
     return (
       <div>

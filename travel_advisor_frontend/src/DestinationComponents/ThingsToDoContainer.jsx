@@ -4,7 +4,7 @@ class ThingsToDoContainer extends Component {
 
   render() {
     // console.log(this.props.things_to_do)
-    let {name, bio, photo, destination} = this.props.things_to_do
+    let {name, bio, photo, destination} = this.props.thingstodo
     return (
       <div>
           <div className="slick-list">

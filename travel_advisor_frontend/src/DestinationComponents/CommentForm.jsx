@@ -14,26 +14,14 @@ class CommentForm extends Component {
     })
   }
 
-  handlePost = (evt) => {
+  handlePost=(evt)=>{
     evt.preventDefault()
-
-    fetch('http://localhost:4000/reviews', {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-        "accept": "application/json",
-        "Authorization": `bearer ${localStorage.token}`
-      },
-      body: JSON.stringify({
-        destination_id: this.props.destination_id,
-        user_id: 1,
-        comment: this.state.comment,
-        rating: 0
-      })
-    })
-    .then(r => r.json())
-    .then(console.log)
+    this.props.createComment(this.state.comment)
   }
+//here each review belongs to a user
+//we are sending token at the backend so that we can create
+//reviews along with its user. check review controller
+
 
   render() {
     // console.log(this.props.user)
@@ -41,7 +29,7 @@ class CommentForm extends Component {
     return (
       <div>
         <form onSubmit={this.handlePost}>
-          <input 
+          <input
           name="comment"
           value={this.state.comment}
           onChange={this.allChange}

@@ -30,13 +30,16 @@ class App extends Component {
     })
   }
 
-  renderDestination = (routerProps) => {
-    // console.log(routerProps)
-    let destinationName = routerProps.match.params.name
-
-    let foundDestination = this.state.destinations.find(destinationObj => destinationObj.name === destinationName)
-    return (foundDestination ? <ShowContainer user={this.state.user} destination={foundDestination}/> : <NotFound/>)
-  }
+//dont need this method,
+// given dest exist or not?
+  // renderDestination = (routerProps) => {
+  //   // console.log(routerProps)
+  //   let destinationName = routerProps.match.params.name
+  //
+  //
+  //   let foundDestination = this.state.destinations.find(destinationObj => destinationObj.name === destinationName)
+  //   return (foundDestination ? <ShowContainer user={this.state.user} destination={foundDestination}/> : <NotFound/>)
+  // }
 
   // setting the state with the newUser data coming from SignUp.js form
   // .user & .token coming from back end in UserController {user: UserSerializer(@user), token: @token}
@@ -115,7 +118,7 @@ class App extends Component {
 
   render() {
     console.log(this.state.token)
-    // console.log(this.state.user)
+    console.log(this.state.user)
     // console.log(this.state.destinations);
     return (
 
@@ -131,7 +134,7 @@ class App extends Component {
            />} />
            <Route exact path='/profile' component={ ProfileContainer } />
            <Route exact path='/signup' render={ (routerProps) => <SignUp createNewUser={this.createNewUser} routerProps={routerProps} /> }/>
-           <Route  path='/:name' render={routerProps => this.renderDestination(routerProps)} />
+           <Route  path='/:name/:id' component={ ShowContainer } user={this.state.user} />
            <Route component = {NotFound} />
         </Switch>
       </div>
