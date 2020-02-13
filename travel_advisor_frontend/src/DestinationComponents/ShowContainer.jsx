@@ -22,7 +22,6 @@ class ShowContainer extends Component {
     })
   }
 
-// with prevstate takes previous
   createComment = (newComment) => {
     fetch('http://localhost:4000/reviews', {
       method: "POST",
@@ -40,26 +39,46 @@ class ShowContainer extends Component {
     .then(r => r.json())
     .then((revdata) => {
       let reviewArr = [...this.state.reviews, revdata]
-      console.log(reviewArr);
+      // console.log(reviewArr);
       this.setState({
         reviews: reviewArr
       })
     })
   }
 
+  // add new destination to bucketlist for logged in user. This method is not displaying anything in the destination show page.
+  addToBucketList = () => {
+    fetch('http://localhost:4000/add_joiners', {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "Authorization": `bearer ${localStorage.token}`
+      },
+      body: JSON.stringify({
+        destination_id: this.state.id
+      })
+    })
+    .then(r => r.json())
+    .then(add_joiner => {
+      let newAddJoiner = [...this.state.add_joiners, add_joiner]
+      this.setState({
+        add_joiners: newAddJoiner
+      })
+    })
+  }
+
   render() {
-    console.log(this.state);
+    // console.log(this.state);
     // console.log(this.props);
-      // let destinationName = routerProps.match.params.name
-    // console.log(this.props.destination);
-    // console.log(this.props.destination.things_to_dos)
+      // let destinationName = this.props.match.params.name
+      // console.log(destinationName)
     let {id, name, photo, bio, trip_type, things_to_dos} = this.state
-console.log();
+
     let thingsToDo = !things_to_dos ? null : things_to_dos.map(thingstodo => <ThingsToDoContainer key={thingstodo.id} thingstodo={thingstodo}/> )
 
     return (
       <div>
-        <i className="fas fa-plus"></i>
+        <i onClick={this.addToBucketList} className="fas fa-plus"></i>
         <PhotoContainer destination={this.state}/>
         {thingsToDo}
         <CommentForm createComment={this.createComment}/>

@@ -7,7 +7,7 @@ class DestinationCard extends Component {
     let {name, bio, photo, trip_type} = this.props.destination
     return (
 
-        <div className="ui card">
+        <div id="destination-card" className="ui card">
           <div className="image"><img src={photo} alt={name} /></div>
           <div className="content">
             <div className="header">{name}</div>

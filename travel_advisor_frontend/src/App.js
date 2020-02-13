@@ -30,17 +30,6 @@ class App extends Component {
     })
   }
 
-//dont need this method,
-// given dest exist or not?
-  // renderDestination = (routerProps) => {
-  //   // console.log(routerProps)
-  //   let destinationName = routerProps.match.params.name
-  //
-  //
-  //   let foundDestination = this.state.destinations.find(destinationObj => destinationObj.name === destinationName)
-  //   return (foundDestination ? <ShowContainer user={this.state.user} destination={foundDestination}/> : <NotFound/>)
-  // }
-
   // setting the state with the newUser data coming from SignUp.js form
   // .user & .token coming from back end in UserController {user: UserSerializer(@user), token: @token}
   createNewUser = (newUser) => {
@@ -49,7 +38,6 @@ class App extends Component {
       token: newUser.token
     })
   }
-
 
 //Login
   loginUser = (user) => {
@@ -82,7 +70,7 @@ class App extends Component {
     let token = localStorage.getItem("token")
   fetch(`http://localhost:4000/persist`, {
     headers: {
-       "Authorization": `bearer ${this.state.token}`
+       "Authorization": `bearer ${localStorage.token}`
      }
   })
   .then(r => r.json())
@@ -117,13 +105,14 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.token)
-    console.log(this.state.user)
+
+    // console.log(this.state.token)
+    // console.log(this.state.user)
     // console.log(this.state.destinations);
     return (
 
       <div>
-           <HeaderContainer />
+           <HeaderContainer historyProps={this.props} />
 
         <Switch>
            <Route exact path='/' render={ () => <HomeContainer
@@ -131,6 +120,7 @@ class App extends Component {
            loginUser={this.loginUser}
            search={this.state.search}
            updateSearchForm={this.updateSearchForm}
+           historyProps={this.props}
            />} />
            <Route exact path='/profile' component={ ProfileContainer } />
            <Route exact path='/signup' render={ (routerProps) => <SignUp createNewUser={this.createNewUser} routerProps={routerProps} /> }/>
