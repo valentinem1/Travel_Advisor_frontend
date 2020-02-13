@@ -5,7 +5,13 @@ import {Link} from "react-router-dom"
 
 class HeaderContainer extends Component {
 
+  logOutUser = () => {
+    localStorage.clear()
+    this.props.historyProps.history.push("/")
+  }
+
   render() {
+    // console.log(this.props)
     return (
 
       <div>
@@ -14,13 +20,11 @@ class HeaderContainer extends Component {
                <Link to="/"><div  className="ui inverted button">
                   Home
                    </div></Link>
-               <Link to="/profile"><div className="ui inverted button">
+              {localStorage.token ? <div><Link to="/profile"><div className="ui inverted button">
                   Profile
-               </div></Link>
-
-              <Link to='/signup'><div  className="ui inverted button">
+               </div></Link> <button onClick={this.logOutUser} className="ui inverted button">Log Out</button> </div> : <Link to='/signup'><div  className="ui inverted button">
                   SignUp
-             </div></Link>
+             </div></Link>}
 
         </div>
      </div>

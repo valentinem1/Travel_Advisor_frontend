@@ -8,22 +8,35 @@
 
 .login {
   padding: -2vw 4vw;
-  margin: 1vw 0;
+  margin: -5vw ;
 }
 
 .loginForm {
-  padding: 10vw;
+  padding: 18vh 7vw ;
   background-color: bisque;
-  width: 10vw;
+  width: 5vw;
+  border-radius: 1rem;
+  margin-left: 1vw;
+  margin-top: 1vw;
 }
 .ui.card:hover{
   cursor: pointer;
 }
 
+.destination-container{
+  margin-left: 25vw;
+  /* float: left; */
+}
 
+#destination-card{
+  margin: 1rem 1rem;
+  display: inline-block;
+  width: 30%;
+  height: 100%;
+}
 
 .ui.centered.medium.image{
-width: 70vw;
+width: 65vw;
 height: 59vh;
 font-size: 1rem;
 }

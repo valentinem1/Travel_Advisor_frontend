@@ -10,7 +10,7 @@ class DestinationContainer extends Component {
      <Link key={destination.id} to={`/${destination.name}/${destination.id}`}><DestinationCard key={destination.id} destination={destination}/></Link>)
 
     return (
-      <div>
+      <div className="destination-container">
         {destinationCard}
       </div>
     );

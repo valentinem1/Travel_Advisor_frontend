@@ -5,7 +5,8 @@ class AuthContainer extends Component {
   render() {
     return (
       <div>
-        <Login loginUser={this.props.loginUser} />
+        {localStorage.token ? <div className="loginForm">Welcome!</div>: <Login loginUser={this.props.loginUser} />}
+        
       </div>
     );
   }
