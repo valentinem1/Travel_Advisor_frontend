@@ -6,16 +6,17 @@ import SearchForm from './SearchForm'
 class HomeContainer extends Component {
 
   render() {
-    // console.log(this.props.destinations);
-    // console.log(this.props)
+
     return (
       <div>
         <SearchForm 
-        search={this.props.search}
-        updateSearchForm={this.props.updateSearchForm}
+          search={this.props.search}
+          updateSearchForm={this.props.updateSearchForm}
         />
-        <AuthContainer loginUser={this.props.loginUser} />
-        <DestinationContainer destinations={this.props.destinations}/>
+        <div className="auth-destination-container">
+          <AuthContainer loginUser={this.props.loginUser} />
+          <DestinationContainer destinations={this.props.destinations}/>
+        </div>
       </div>
     );
   }

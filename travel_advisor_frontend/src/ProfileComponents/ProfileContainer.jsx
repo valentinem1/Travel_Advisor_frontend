@@ -24,15 +24,14 @@ class ProfileContainer extends Component {
   }
   
   render() {
-    // console.log(this.state)
-    let { username, bio, picture, reviews, bucketlist } = this.state
-    // console.log(bucketlist)
-    // debugger
+
+    let { username, picture, reviews, bucketlist } = this.state
+
     return (
       <div>
-      <PhotoCard picture={picture} username={username}/>
-      <BucketlistContainer bucketlist={bucketlist} />
-      <ContributionContainer reviews={reviews} />
+        <PhotoCard picture={picture} username={username}/>
+        <BucketlistContainer bucketlist={bucketlist} />
+        <ContributionContainer reviews={reviews} />
       </div>
     );
   }

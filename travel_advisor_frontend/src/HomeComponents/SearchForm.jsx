@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Form } from 'semantic-ui-react'
 class SearchForm extends Component {
   
   handleSearch = (evt) => {
@@ -10,18 +10,17 @@ class SearchForm extends Component {
 
     return (
       <div>
-          <form className="search-form">
-            <label>Search Your Next Destination: </label>
-            <br/>
-            <input
-            className="search-input"
-            name="search"
-            placeholder="Search cities..."
-            value={this.props.search}
-            onChange={this.handleSearch}
+          <Form className="search-form">
+            <Form.Input
+              className="search-input"
+              icon="search"
+              name="search"
+              placeholder="Search your next destination..."
+              value={this.props.search}
+              onChange={this.handleSearch}
             />
 
-          </form>
+          </Form>
       </div>
     );
   }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Login from '../Login.jsx'
+import Login from './Login.jsx'
 class AuthContainer extends Component {
 
   render() {

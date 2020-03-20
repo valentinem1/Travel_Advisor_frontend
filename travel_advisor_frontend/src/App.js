@@ -2,14 +2,12 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import './App.css';
 import { Route, Switch } from 'react-router'
-import SignUp from './SignUp'
+import SignUp from './HomeComponents/SignUp'
 import HomeContainer from './HomeComponents/HomeContainer'
 import ProfileContainer from './ProfileComponents/ProfileContainer'
 import ShowContainer from './DestinationComponents/ShowContainer'
 import HeaderContainer from './HeaderContainer.jsx'
 import NotFound from './NotFound'
-import DestinationCard from './HomeComponents/DestinationCard'
-
 
 class App extends Component {
 
@@ -67,7 +65,7 @@ class App extends Component {
   //everytime a page is refresed this component gets rendered
   //so that the user does not get logged out
   if (localStorage.getItem("token")){
-    let token = localStorage.getItem("token")
+      localStorage.getItem("token")
   fetch(`http://localhost:4000/persist`, {
     headers: {
        "Authorization": `bearer ${localStorage.token}`

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import {Link} from "react-router-dom"
-
-
+import { Link } from "react-router-dom"
+import { Segment, Header, Button, Image } from 'semantic-ui-react'
 
 class HeaderContainer extends Component {
 
@@ -11,24 +10,21 @@ class HeaderContainer extends Component {
   }
 
   render() {
-    // console.log(this.props)
     return (
-
-      <div>
-     <div className="ui inverted segment">
-         <div className="ui inverted secondary pointing menu">
-               <Link to="/"><div  className="ui inverted button">
-                  Home
-                   </div></Link>
-              {localStorage.token ? <div><Link to="/profile"><div className="ui inverted button">
-                  Profile
-               </div></Link> <button onClick={this.logOutUser} className="ui inverted button">Log Out</button> </div> : <Link to='/signup'><div  className="ui inverted button">
-                  SignUp
-             </div></Link>}
-
+      <Segment className="page-header">
+        <div className="logo-title-header">
+          <Image src="https://www.underconsideration.com/brandnew/archives/tripadvisor_logo_icon_detail.png" alt="logo" className="page-logo"/>
+          <Header className="page-title">Travel Advisor</Header>
         </div>
-     </div>
- </div>
+        <Header>
+          <Link to="/"><Button className="header-buttons">Home</Button></Link>
+          {localStorage.token ? 
+            <><Link to="/profile"><Button className="header-buttons">Profile</Button></Link> 
+            <Button className="header-buttons" onClick={this.logOutUser}>Log Out</Button></> : 
+            <Link to='/signup'><Button className="header-buttons">SignUp</Button></Link>
+          }
+        </Header>
+      </Segment>
     );
   }
 
