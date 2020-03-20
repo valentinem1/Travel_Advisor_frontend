@@ -1,44 +1,135 @@
-.ui.inverted.segment{
-  background-color: #D2B48C !important;
+/* Home page css */
+.page-header{
+  background-color: #ffffff !important;
 }
 
-.menu{
+.page-logo{
+  width: 5vw !important;
+  height: 6vh !important;
+  border-radius: 5vw !important;
+}
+
+.logo-title-header{
+  display: flex;
+  align-items: center;
+}
+
+.page-title{
+  margin-left: 1.5vw !important;
+  margin-top: 1.2vh !important;
+  font-family: Sans, Arial, sans-serif !important;
+  font-size: 2.5vw !important;
+  letter-spacing: -0.2vw !important;
+}
+
+.header-buttons{
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+/* .menu{
   border: none !important
-}
+} */
 
-.login {
-  padding: -2vw 4vw;
-  margin: -5vw ;
+.auth-destination-container{
+  display: flex;
+  align-items: center;
 }
 
 .loginForm {
-  padding: 18vh 7vw ;
-  background-color: bisque;
+  padding-left: 7vw;
+  padding-right: 9vw;
+  background-color: #15ddab;
   width: 5vw;
   border-radius: 1rem;
   margin-left: 1vw;
-  margin-top: 1vw;
-}
-.ui.card:hover{
-  cursor: pointer;
+  margin-top: -8vw;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
 }
 
+.login-input{
+  width: 12vw !important;
+  height: 5vh !important;
+  margin-left: -5vw !important;
+  margin-top: 1.7vh !important;
+  margin-bottom: 1vh !important;
+}
+
+.login-username-label{
+  width: 5vw !important;
+  font-weight: bold !important;
+  margin-left: -1vw !important;
+  margin-top: 2vh !important;
+}
+
+.login-submit-btn{
+  margin-top: 2vh !important;
+  margin-left: -1.8vw !important;
+  margin-bottom: 3vh !important;
+  width: 10vw !important;
+}
+
+/* search bar */
+.search-form{
+  margin-top: 3vw;
+  margin-left: 31vw;
+}
+
+.search-input{
+  width: 40vw;
+  height: 4.5vh;
+}
+
+/* home page destination cards */
 .destination-container{
-  margin-left: 25vw;
-  /* float: left; */
+  margin-left: 1.5vw !important;
+  margin-top: 2vh !important;
 }
 
-#destination-card{
-  margin: 1rem 1rem;
-  display: inline-block;
-  width: 30%;
-  height: 100%;
+.destination-card{
+  height: 25vh !important;
+  width: 18vw !important;
+  margin-left: 2vw !important;
+  margin-top: 2vh !important;
+  margin-bottom: 3vh !important;
 }
 
-.ui.centered.medium.image{
-width: 65vw;
-height: 59vh;
-font-size: 1rem;
+.ui.card>.image>img{
+  width: 18vw !important;
+  height: 25vh !important;
+}
+
+.ui.card>.image>img:hover{
+  opacity: 0.5 !important;
+}
+
+.destination-header{
+  margin-top: -25vh !important;
+  position: absolute !important;
+  color: #020202 !important;
+  font-weight: bold !important;
+}
+
+.destination-info-content{
+  position: absolute !important;
+  margin-top: -15vh !important;
+  text-align: center !important;
+  color: #000000 !important;
+  align-items: center !important;
+  font-weight: 600 !important;
+  font-size: 2vw !important;
+}
+
+.hover-destination-header{
+  margin-top: -25vh !important;
+  position: absolute !important;
+  color: #020202 !important;
+  font-weight: bold !important;
+  opacity: 0.2 !important;
 }
 
 /* have to add font family and size */

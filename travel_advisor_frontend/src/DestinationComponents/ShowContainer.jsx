@@ -72,7 +72,7 @@ class ShowContainer extends Component {
     // console.log(this.props);
       // let destinationName = this.props.match.params.name
       // console.log(destinationName)
-    let {id, name, photo, bio, trip_type, things_to_dos} = this.state
+    let { things_to_dos } = this.state
 
     let thingsToDo = !things_to_dos ? null : things_to_dos.map(thingstodo => <ThingsToDoContainer key={thingstodo.id} thingstodo={thingstodo}/> )
 
