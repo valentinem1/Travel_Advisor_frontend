@@ -48,7 +48,7 @@ class Login extends Component {
                         onChange={this.handleAllChange}
                     />
                 </Form.Field>
-                <Form.Field className="login-submit-btn" color="black" control={Button}>Sign up</Form.Field>
+                <Form.Field className="login-submit-btn" color="black" control={Button}>Sign in</Form.Field>
             </Form>
         
         )

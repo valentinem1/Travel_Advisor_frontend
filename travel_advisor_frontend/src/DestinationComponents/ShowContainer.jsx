@@ -3,7 +3,7 @@ import CommentContainer from './CommentContainer'
 import CommentForm from './CommentForm'
 import PhotoContainer from './PhotoContainer'
 import ThingsToDoContainer from './ThingsToDoContainer'
-
+import { Button } from 'semantic-ui-react'
 
 class ShowContainer extends Component {
 
@@ -39,7 +39,6 @@ class ShowContainer extends Component {
     .then(r => r.json())
     .then((revdata) => {
       let reviewArr = [...this.state.reviews, revdata]
-      // console.log(reviewArr);
       this.setState({
         reviews: reviewArr
       })
@@ -68,17 +67,13 @@ class ShowContainer extends Component {
   }
 
   render() {
-    // console.log(this.state);
-    // console.log(this.props);
-      // let destinationName = this.props.match.params.name
-      // console.log(destinationName)
     let { things_to_dos } = this.state
 
     let thingsToDo = !things_to_dos ? null : things_to_dos.map(thingstodo => <ThingsToDoContainer key={thingstodo.id} thingstodo={thingstodo}/> )
 
     return (
       <div>
-        <i onClick={this.addToBucketList} className="fas fa-plus"></i>
+        <Button onClick={this.addToBucketList} className="add-to-bucketlist">+ Add to bucketlist</Button>
         <PhotoContainer destination={this.state}/>
         {thingsToDo}
         <CommentForm createComment={this.createComment}/>
