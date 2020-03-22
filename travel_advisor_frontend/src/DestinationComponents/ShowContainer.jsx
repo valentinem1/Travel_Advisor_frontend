@@ -4,7 +4,6 @@ import CommentForm from './CommentForm'
 import PhotoContainer from './PhotoContainer'
 import ThingsToDoContainer from './ThingsToDoContainer'
 
-
 class ShowContainer extends Component {
 
   state = {
@@ -39,7 +38,6 @@ class ShowContainer extends Component {
     .then(r => r.json())
     .then((revdata) => {
       let reviewArr = [...this.state.reviews, revdata]
-      // console.log(reviewArr);
       this.setState({
         reviews: reviewArr
       })
@@ -68,17 +66,13 @@ class ShowContainer extends Component {
   }
 
   render() {
-    // console.log(this.state);
-    // console.log(this.props);
-      // let destinationName = this.props.match.params.name
-      // console.log(destinationName)
     let { things_to_dos } = this.state
 
     let thingsToDo = !things_to_dos ? null : things_to_dos.map(thingstodo => <ThingsToDoContainer key={thingstodo.id} thingstodo={thingstodo}/> )
 
     return (
       <div>
-        <i onClick={this.addToBucketList} className="fas fa-plus"></i>
+        <i onClick={this.addToBucketList} className="fa fa-plus"><span className="add-to-bucketlist">Add to bucketlist</span></i>
         <PhotoContainer destination={this.state}/>
         {thingsToDo}
         <CommentForm createComment={this.createComment}/>
