@@ -3,6 +3,7 @@ import CommentContainer from './CommentContainer'
 import CommentForm from './CommentForm'
 import PhotoContainer from './PhotoContainer'
 import ThingsToDoContainer from './ThingsToDoContainer'
+import { Button } from 'semantic-ui-react'
 
 class ShowContainer extends Component {
 
@@ -72,7 +73,7 @@ class ShowContainer extends Component {
 
     return (
       <div>
-        <i onClick={this.addToBucketList} className="fa fa-plus"><span className="add-to-bucketlist">Add to bucketlist</span></i>
+        <Button onClick={this.addToBucketList} className="add-to-bucketlist">+ Add to bucketlist</Button>
         <PhotoContainer destination={this.state}/>
         {thingsToDo}
         <CommentForm createComment={this.createComment}/>

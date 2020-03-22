@@ -131,9 +131,8 @@
 
 /* Destination show page css */
 
-.fa.fa-plus{
+/* .fa.fa-plus{
   font-size: 1vw;
-  /* margin-left: 1vw; */
   margin-left: 87vw;
   background-color: #15ddab;
   color: #000000;
@@ -146,19 +145,38 @@
 
 .fa.fa-plus:hover{
   cursor: pointer;
-}
+  font-size: 1vw;
+  margin-left: 87vw;
+  background-color: #000000;
+  color: #15ddab;
+  padding-top: 0.8vw;
+  padding-bottom: 0.8vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  border-radius: 2vw;
+} */
 
 .add-to-bucketlist{
-  font-size: 1.1vw;
-  font-family: Sans, Arial, sans-serif;
-  letter-spacing: -0.05vw;
-  margin-left: 0.6vw;
-  margin-top: -0.8vh;
-  color: #000000;
+  font-size: 1.1vw !important;
+  font-family: Sans, Arial, sans-serif !important;
+  letter-spacing: -0.05vw !important;
+  margin-left: 87vw !important;
+  background-color: #15ddab !important;
+  color: #000000 !important;
+  border-radius: 3vw !important;
+  font-weight: bold !important;
 }
 
 .add-to-bucketlist:hover{
-  cursor: pointer;
+  cursor: pointer !important;
+  font-size: 1.1vw !important;
+  font-family: Sans, Arial, sans-serif !important;
+  letter-spacing: -0.05vw !important;
+  margin-left: 87vw !important;
+  background-color: #000000 !important;
+  color: #15ddab !important;
+  border-radius: 3vw !important;
+  font-weight: bold !important;
 }
 
 /* have to add font family and size */
