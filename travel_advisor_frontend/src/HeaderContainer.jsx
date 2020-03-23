@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom"
-import { Segment, Header, Button, Image } from 'semantic-ui-react'
+import { Header, Button, Image, Menu } from 'semantic-ui-react'
+
 
 class HeaderContainer extends Component {
 
@@ -11,20 +12,26 @@ class HeaderContainer extends Component {
 
   render() {
     return (
-      <Segment className="page-header">
-        <div className="logo-title-header">
-          <Image src="https://www.underconsideration.com/brandnew/archives/tripadvisor_logo_icon_detail.png" alt="logo" className="page-logo"/>
-          <Header className="page-title">Travel Advisor</Header>
-        </div>
-        <Header>
-          <Link to="/"><Button className="header-buttons">Home</Button></Link>
+      <div className="page-header">
+        <Link to="/">
+          <div className="logo-title-header">
+            <Image src="https://www.underconsideration.com/brandnew/archives/tripadvisor_logo_icon_detail.png" alt="logo" className="page-logo"/>
+            <Header className="page-title">Travel Advisor</Header>
+          </div>
+        </Link>
+        <Header className="header-buttons">
           {localStorage.token ? 
-            <><Link to="/profile"><Button className="header-buttons">Profile</Button></Link> 
-            <Button className="header-buttons" onClick={this.logOutUser}>Log Out</Button></> : 
-            <Link to='/signup'><Button className="header-buttons">SignUp</Button></Link>
+            <>
+              <Link to="/profile" >
+                <Button className="profile-btn">Profile</Button>
+              </Link> 
+              <Button className="logout-btn" onClick={this.logOutUser}>Logout</Button>
+              
+            </> : 
+            <Link to='/signup'><Button>SignUp</Button></Link>
           }
         </Header>
-      </Segment>
+      </div>
     );
   }
 

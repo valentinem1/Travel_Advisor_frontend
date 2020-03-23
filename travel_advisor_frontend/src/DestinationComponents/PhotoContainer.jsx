@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Image, Header } from 'semantic-ui-react'
 
 class PhotoContainer extends Component {
 
@@ -8,8 +9,8 @@ class PhotoContainer extends Component {
 
     return (
         <div className="ui segment">
-          <h3 className="destName">{name}</h3>
-        <img className="ui centered medium image destination-image" src={photo} alt={name} />
+          <Header className="destName">{name}</Header>
+        <Image className="destination-image" src={photo} alt={name} />
         <p className = "bio">{bio}</p>
         </div>
 

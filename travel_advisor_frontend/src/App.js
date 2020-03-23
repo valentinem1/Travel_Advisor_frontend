@@ -13,7 +13,6 @@ class App extends Component {
 
   state={
     user: {},
-    token: "",
     destinations:[],
     search: ""
   }
@@ -26,10 +25,24 @@ class App extends Component {
         destinations
       })
     })
+
+    if(localStorage.token){
+      fetch(`http://localhost:4000/persist`, {
+        headers: {
+          "Authorization": `bearer ${localStorage.token}`
+        }
+      })
+      .then(r => r.json())
+      .then((data) => {
+        if(data.token){
+          this.setState({
+              user: data.user
+            })
+          }
+        })
+      }
   }
 
-  // setting the state with the newUser data coming from SignUp.js form
-  // .user & .token coming from back end in UserController {user: UserSerializer(@user), token: @token}
   createNewUser = (newUser) => {
     this.setState({
       user: newUser.user,
@@ -37,7 +50,6 @@ class App extends Component {
     })
   }
 
-//Login
   loginUser = (user) => {
     fetch('http://localhost:4000/login', {
       method: "POST",
@@ -48,43 +60,18 @@ class App extends Component {
     })
     .then(r => r.json())
     .then(userData => {
-      // console.log(userData)
+      console.log(userData.user)
       if(!userData.error){
         localStorage.setItem("token", userData.token)
         this.setState({
-          user: userData.user,
-          token: userData.token
-      })
+          user: userData.user
+        })
       }
     })
-  }// end of login user
-// if the person is logged in or not
 
-// persist
-  persistLogInData() {
-  //everytime a page is refresed this component gets rendered
-  //so that the user does not get logged out
-  if (localStorage.getItem("token")){
-      localStorage.getItem("token")
-  fetch(`http://localhost:4000/persist`, {
-    headers: {
-       "Authorization": `bearer ${localStorage.token}`
-     }
-  })
-  .then(r => r.json())
-  .then((data) => {
-    // console.log(data);
-    // if the token from the user exists then set the token here
-    if(data.token){
-      localStorage.setItem("token", data.token)
-      this.setState({
-          user: data.user,
-          token: data.token
-        })// end of setState
-    }// end of data if
-  })
-} //end of if
-}// end of componentDidMount
+    
+
+  }
 
   updateSearchForm = (newValue) => {
     this.setState(prevState => {
@@ -103,13 +90,10 @@ class App extends Component {
   }
 
   render() {
-
-    // console.log(this.state.token)
     // console.log(this.state.user)
-    // console.log(this.state.destinations);
     return (
 
-      <div>
+      <div className="page-window">
            <HeaderContainer historyProps={this.props} />
 
         <Switch>
@@ -119,6 +103,7 @@ class App extends Component {
            search={this.state.search}
            updateSearchForm={this.updateSearchForm}
            historyProps={this.props}
+           user={this.state.user}
            />} />
            <Route exact path='/profile' component={ ProfileContainer } />
            <Route exact path='/signup' render={ (routerProps) => <SignUp createNewUser={this.createNewUser} routerProps={routerProps} /> }/>
