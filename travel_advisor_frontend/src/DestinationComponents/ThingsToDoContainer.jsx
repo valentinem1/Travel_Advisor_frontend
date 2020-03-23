@@ -8,11 +8,11 @@ class ThingsToDoContainer extends Component {
     let {name, bio, photo, destination} = this.props.thingstodo
 
     return (
-      <Card className="things-to-do-card">
-        <Image className="things-to-do-image" src={photo} alt={destination} />
-        <Card.Header className="things-to-do-header">{name}</Card.Header>
-        <Card.Description className="things-to-do-bio">{bio}</Card.Description>
-      </Card>
+        <Card className="things-to-do-card">
+          <Image className="things-to-do-image" src={photo} alt={destination} />
+          <Card.Header className="things-to-do-header">{name}</Card.Header>
+          <Card.Description className="things-to-do-bio">{bio}</Card.Description>
+        </Card>
     );
   }
 

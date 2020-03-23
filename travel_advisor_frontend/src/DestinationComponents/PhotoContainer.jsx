@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, Header, Segment, Container } from 'semantic-ui-react'
+import { Image, Header } from 'semantic-ui-react'
 
 class PhotoContainer extends Component {
 

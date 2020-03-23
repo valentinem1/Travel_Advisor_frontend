@@ -60,7 +60,6 @@ class App extends Component {
     })
     .then(r => r.json())
     .then(userData => {
-      console.log(userData.user)
       if(!userData.error){
         localStorage.setItem("token", userData.token)
         this.setState({
@@ -90,11 +89,10 @@ class App extends Component {
   }
 
   render() {
-    // console.log(this.state.user)
     return (
 
       <div className="page-window">
-          <HeaderContainer historyProps={this.props} />
+          <HeaderContainer createNewUser={this.createNewUser} historyProps={this.props} />
           <hr className="header-separation"/>
 
         <Switch>

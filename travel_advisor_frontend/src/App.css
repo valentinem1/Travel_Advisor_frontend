@@ -30,7 +30,7 @@ body{
   margin-left: 0.8vw !important;
   margin-top: 1vh !important;
   margin-bottom: 0.8vh !important;
-  font-family: Sans, Arial, sans-serif !important;
+  font-family: Trip Sans, Arial, sans-serif !important;
   font-size: 2vw !important;
   letter-spacing: -0.2vw !important;
 }
@@ -113,7 +113,7 @@ body{
 .sign-up-label{
   text-align: center;
   font-size: 1.1vw !important;
-  font-family: Sans, Arial, sans-serif;
+  font-family: Trip Sans, Arial, sans-serif;
   margin-bottom: 2vh !important;
 }
 
@@ -272,7 +272,7 @@ body{
 /* Destination show page css */
 .add-to-bucketlist{
   font-size: 1.1vw !important;
-  font-family: Sans, Arial, sans-serif !important;
+  font-family: Trip Sans, Arial, sans-serif !important;
   letter-spacing: -0.05vw !important;
   margin-left: 87vw !important;
   background-color: #15ddab !important;
@@ -284,7 +284,7 @@ body{
 .add-to-bucketlist:hover{
   cursor: pointer !important;
   font-size: 1.1vw !important;
-  font-family: Sans, Arial, sans-serif !important;
+  font-family: Trip Sans, Arial, sans-serif !important;
   letter-spacing: -0.05vw !important;
   margin-left: 87vw !important;
   background-color: #000000 !important;
@@ -295,14 +295,14 @@ body{
 
 .destination-showpage-name{
   text-align: center;
-  font-size: 2vw !important;
-  font-family: Sans, Arial, sans-serif !important;
+  font-size: 3vw !important;
+  font-family: Trip Sans, Arial, sans-serif !important;
 }
 
 .destination-showpage-image{
-  width: 60vw !important;
-  height: 45vh !important;
-  margin-left: 20vw !important;
+  width: 62vw !important;
+  height: 50vh !important;
+  margin-left: 19vw !important;
   border-radius: 0.5vw !important;
 }
 
@@ -310,6 +310,14 @@ body{
   text-align: center;
   margin-top: 3vh !important;
   margin-bottom: 10vh !important;
+}
+
+/* things to do container css */
+.things-to-do-container-header{
+  margin-left: 8vw !important;
+  margin-bottom: 5vh !important;
+  font-size: 2vw !important;
+  text-decoration: underline;
 }
 
 .things-to-do-container{
@@ -332,11 +340,53 @@ body{
 .things-to-do-header{
   font-size: 1.3vw !important;
   font-weight: bold;
-  font-family: Arial,Tahoma,Bitstream Vera Sans,sans-serif;
+  font-family: Trip Sans, Arial, sans-serif;
   margin-left: 2vw;
   margin-top: 1.5vh;
 }
 
 .things-to-do-bio{
   padding: 1.5vw;
+}
+
+/* review/rating css */
+.container-container{
+  margin-left: 15vw !important;
+}
+
+.review-username{
+  font-size: 0.8vw;
+  margin-bottom: 1vh;
+}
+
+.comment-rating-card{
+  display: flex;
+  align-items: center;
+}
+
+.review-comment-card{
+  font-size: 2.5vh;
+}
+
+.span-separation{
+  margin-top: -1.8vh;
+  margin-left: 0.7vw;
+}
+
+.rating-stars-card{
+  margin-top: -1.8vh !important;
+  margin-left: 0.7vw !important;
+}
+
+.review-separation{
+  width: 10vw;
+  margin-left: 0vw;
+  margin-top: -0.5vh;
+}
+
+.create-review-button{
+  margin-top: 2vh !important;
+  margin-bottom: 50vh !important;
+  background-color: #000000 !important;
+  color: #ffffff !important;
 }

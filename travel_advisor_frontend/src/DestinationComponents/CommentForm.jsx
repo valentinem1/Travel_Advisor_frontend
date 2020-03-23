@@ -1,43 +1,50 @@
 import React, { Component } from 'react';
+import { Form, Button, Rating } from 'semantic-ui-react'
 
 class CommentForm extends Component {
 
   state={
-    comment: ""
+    comment: "",
+    rating: 0
   }
 
-  allChange = (evt) => {
-    let {name, value} = evt.target
+  handleChange = (event, { rating }) => {
+    let {name, value} = event.target
 
     this.setState({
-      [name]: value
+        [name]: value,
+        rating
     })
-  }
+}
 
-  handlePost=(evt)=>{
+  handleSubmit=(evt)=>{
     evt.preventDefault()
-    this.props.createComment(this.state.comment)
+    this.props.createComment(this.state)
   }
-//here each review belongs to a user
-//we are sending token at the backend so that we can create
-//reviews along with its user. check review controller
 
 
   render() {
-    // console.log(this.props.user)
-    // console.log(this.props.destination_id)
     return (
-      <div>
-        <form onSubmit={this.handlePost}>
-          <input
-          name="comment"
-          value={this.state.comment}
-          onChange={this.allChange}
-          placeholder="Add your comment..."
-          />
-          <input type="submit" value="Post" />
-        </form>
-      </div>
+
+      <Form onSubmit={this.handleSubmit}>
+        <Form.TextArea
+            className=""
+            label='Leave a review here:'
+            placeholder="Write your thoughts"
+            name="comment"
+            value={this.state.comment}
+            onChange={this.handleChange}
+        />
+        <Rating
+            icon="star"
+            name="rating"
+            onRate={this.handleChange}
+            maxRating={5} 
+            clearable
+        />
+        <br/>
+        <Button className="create-review-button" type='submit'>Submit</Button>
+      </Form>
     );
   }
 
