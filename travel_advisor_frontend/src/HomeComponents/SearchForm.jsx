@@ -10,6 +10,7 @@ class SearchForm extends Component {
 
     return (
       <div>
+        
           <Form className="search-form">
             <Form.Input
               className="search-input"

@@ -27,8 +27,8 @@ class Login extends Component {
 
     render() {
         return (
-            <Form className="loginForm">
-                <Form.Field onSubmit={this.handleSubmit}>
+            <Form className="login-form" onSubmit={this.handleSubmit}>
+                <Form.Field>
                     <label className="login-username-label">Username</label>
                     <Form.Input
                         type="text"

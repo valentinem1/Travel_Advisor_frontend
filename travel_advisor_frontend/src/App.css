@@ -1,30 +1,91 @@
 /* Home page css */
+body{
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
 .page-header{
   background-color: #ffffff !important;
+  padding-bottom: -1vh !important;
+  margin-bottom: 5vh !important;
 }
 
 .page-logo{
-  width: 5vw !important;
-  height: 6vh !important;
+  width: 3vw !important;
+  height: 4vh !important;
   border-radius: 5vw !important;
+  margin-top: 0vh !important;
+  margin-left: 3vw !important;
 }
 
 .logo-title-header{
   display: flex;
   align-items: center;
+  margin-bottom: -5vh;
 }
 
 .page-title{
-  margin-left: 1.5vw !important;
-  margin-top: 1.2vh !important;
+  margin-left: 0.8vw !important;
+  margin-top: 1vh !important;
+  margin-bottom: 0.8vh !important;
   font-family: Sans, Arial, sans-serif !important;
-  font-size: 2.5vw !important;
+  font-size: 2vw !important;
   letter-spacing: -0.2vw !important;
 }
 
 .header-buttons{
-  background-color: #000000 !important;
+  background-color: #ffffff !important;
   color: #ffffff !important;
+  margin-top: 6vh !important;
+  margin-bottom: -1vh !important;
+  border-bottom: #000000 !important;
+}
+
+.profile-btn{
+  margin-left: 2vw !important;
+  color: #000000 !important;
+  font-size: 1.2vw !important;
+  font-weight: bold !important;
+  padding-bottom: -1vh !important;
+  background-color: #ffffff !important;
+  border-radius: 0vw !important;
+  border-bottom: solid #ffffff !important;
+}
+
+.profile-btn:hover{
+  border-bottom: solid !important;
+}
+
+.logout-btn{
+  color: #000000 !important;
+  font-size: 1.2vw !important;
+  font-weight: bold !important;
+  padding-bottom: -1vh !important;
+  background-color: #ffffff !important;
+  border-radius: 0vw !important;
+  border-bottom: solid #ffffff !important;
+}
+
+.logout-btn:hover{
+  border-bottom: solid !important;
+}
+
+.home-page-picture{
+  width: 100vw;
+  height: 35vh;
+  margin-top: -3vh;
+  z-index: -1;
+}
+
+/* search bar */
+.search-form{
+  margin-top: -11vw;
+  margin-left: 30vw;
+}
+
+.search-input{
+  width: 35vw;
+  font-size: 1.8vw;
 }
 
 .auth-destination-container{
@@ -32,14 +93,14 @@
   align-items: center;
 }
 
-.loginForm {
+.login-form {
   padding-left: 7vw;
   padding-right: 9vw;
   background-color: #15ddab;
   width: 5vw;
   border-radius: 1rem;
   margin-left: 1vw;
-  margin-top: -8vw;
+  margin-top: 4vw;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -70,21 +131,34 @@
   width: 10vw !important;
 }
 
-/* search bar */
-.search-form{
-  margin-top: 3vw;
-  margin-left: 31vw;
+.welcome-container{
+  padding-left: 6vw;
+  padding-right: 6vw;
+  padding-bottom: 1.5vh;
+  padding-top: 1.5vh;
+  background-color: #15ddab;
+  width: 5vw;
+  margin-left: 1vw;
+  margin-top: -16vw;
 }
 
-.search-input{
-  width: 40vw;
-  height: 4.5vh;
+.welcome-message{
+  font-weight: bold;
+  font-size: 1vw;
+  margin-left: -4.8vw;
+  width: 15vw;
 }
 
 /* home page destination cards */
 .destination-container{
   margin-left: 1.5vw !important;
-  margin-top: 2vh !important;
+  margin-top: 20vh !important;
+}
+
+/* when user is login the margin of the destination container is reduced */
+.login-destination-container{
+  margin-left: -3vw !important;
+  margin-top: 20vh !important;
 }
 
 .destination-card{
@@ -180,6 +254,7 @@
 }
 
 /* have to add font family and size */
+
 .bio{
   text-align: center;
 }
