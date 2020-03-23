@@ -4,6 +4,7 @@ body{
   margin: 0;
   padding: 0;
 }
+
 .page-header{
   background-color: #ffffff !important;
   padding-bottom: -1vh !important;
@@ -44,7 +45,7 @@ body{
 .profile-btn{
   margin-left: 2vw !important;
   color: #000000 !important;
-  font-size: 1.2vw !important;
+  font-size: 1.1vw !important;
   font-weight: bold !important;
   padding-bottom: -1vh !important;
   background-color: #ffffff !important;
@@ -58,7 +59,7 @@ body{
 
 .logout-btn{
   color: #000000 !important;
-  font-size: 1.2vw !important;
+  font-size: 1.1vw !important;
   font-weight: bold !important;
   padding-bottom: -1vh !important;
   background-color: #ffffff !important;
@@ -68,6 +69,69 @@ body{
 
 .logout-btn:hover{
   border-bottom: solid !important;
+}
+
+.sign-up-btn{
+  margin-left: 2vw !important;
+  color: #000000 !important;
+  font-size: 1.1vw !important;
+  font-weight: bold !important;
+  padding-bottom: -1vh !important;
+  background-color: #ffffff !important;
+  border-radius: 0vw !important;
+  border-bottom: solid #ffffff !important;
+}
+
+.sign-up-btn:hover{
+  border-bottom: solid !important;
+}
+
+/* sign up form css */
+.ui.active.modal{
+  width: 25vw !important;
+  height: 70vh !important;
+  padding-top: 4vh !important;
+}
+
+.sign-up-form-header{
+  text-align: center !important;
+  font-size: 2vw;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-top: 0.5vh;
+  margin-bottom: 3vh;
+  color: #15ddab;
+}
+
+.sign-up-form{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-up-label{
+  text-align: center;
+  font-size: 1.1vw !important;
+  font-family: Sans, Arial, sans-serif;
+  margin-bottom: 2vh !important;
+}
+
+.sign-up-input{
+  width: 15vw !important;
+  align-items: center !important;
+}
+
+.sign-up-submit-btn{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5vh !important;
+}
+
+.header-separation{
+  margin-top: -5vh;
+  border: solid #cecece;
+  border-width: 0.5px;
 }
 
 .home-page-picture{
