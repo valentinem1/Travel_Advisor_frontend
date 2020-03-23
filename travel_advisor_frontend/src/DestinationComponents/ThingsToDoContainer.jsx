@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
+import { Card, Image } from 'semantic-ui-react'
 
 class ThingsToDoContainer extends Component {
 
   render() {
-    // console.log(this.props.things_to_do)
+
     let {name, bio, photo, destination} = this.props.thingstodo
+
     return (
-      <div>
-          <div className="slick-list">
-            <img className="things-to-do-img" src={photo} alt={destination} />
-            <h3>{name}</h3>
-            <p>{bio}</p>
-          </div>
-      </div>
+      <Card className="things-to-do-card">
+        <Image className="things-to-do-image" src={photo} alt={destination} />
+        <Card.Header className="things-to-do-header">{name}</Card.Header>
+        <Card.Description className="things-to-do-bio">{bio}</Card.Description>
+      </Card>
     );
   }
 

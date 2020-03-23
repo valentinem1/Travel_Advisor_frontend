@@ -94,21 +94,22 @@ class App extends Component {
     return (
 
       <div className="page-window">
-           <HeaderContainer historyProps={this.props} />
+          <HeaderContainer historyProps={this.props} />
+          <hr className="header-separation"/>
 
         <Switch>
-           <Route exact path='/' render={ () => <HomeContainer
-           destinations={this.filterSearch()}
-           loginUser={this.loginUser}
-           search={this.state.search}
-           updateSearchForm={this.updateSearchForm}
-           historyProps={this.props}
-           user={this.state.user}
-           />} />
-           <Route exact path='/profile' component={ ProfileContainer } />
-           <Route exact path='/signup' render={ (routerProps) => <SignUp createNewUser={this.createNewUser} routerProps={routerProps} /> }/>
-           <Route  path='/:name/:id' component={ ShowContainer } user={this.state.user} />
-           <Route component = {NotFound} />
+          <Route exact path='/' render={ () => <HomeContainer
+          destinations={this.filterSearch()}
+          loginUser={this.loginUser}
+          search={this.state.search}
+          updateSearchForm={this.updateSearchForm}
+          historyProps={this.props}
+          user={this.state.user}
+          />} />
+          <Route exact path='/profile' component={ ProfileContainer } />
+          <Route exact path='/signup' render={ (routerProps) => <SignUp createNewUser={this.createNewUser} routerProps={routerProps} /> }/>
+          <Route  path='/:name/:id' component={ ShowContainer } user={this.state.user} />
+          <Route component = {NotFound} />
         </Switch>
       </div>
 

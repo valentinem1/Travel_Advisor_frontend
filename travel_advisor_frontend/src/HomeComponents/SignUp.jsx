@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Form, Button, Modal } from 'semantic-ui-react'
 
 class SignUp extends Component {
 
@@ -16,8 +17,6 @@ class SignUp extends Component {
     })
   }
 
-  // creating new user and giving it a new token. 
-  // did fetch here for re-routing to home "/" due to App.js not knowing about routerProps.
   handleSubmit = (evt) => {
     evt.preventDefault()
     fetch('http://localhost:4000/users', {
@@ -30,13 +29,9 @@ class SignUp extends Component {
     })
     .then(r => r.json())
     .then(newUser => {
-      // console.log(newUser)
       if (!newUser.error) {
         localStorage.setItem("token", newUser.token)
-        // invoking createNewUser coming from App.js as callback functionwith the newUser instance as an argument to set the state in App.js.
         this.props.createNewUser(newUser)
-        
-        // coming from App.js to re-route to home "/" after creating user.
         this.props.routerProps.history.push("/")
         
       }
@@ -44,48 +39,64 @@ class SignUp extends Component {
   }
 
   render() {
-
-    // console.log(this.props)
-
     return (
+      <div>
+        <Modal.Header className="sign-up-form-header">Sign up</Modal.Header>
+        <Modal.Description>
+          <Form className="sign-up-form" onSubmit={this.handleSubmit}>
+            <Form.Field>
+              <label className="sign-up-label"><b>Username</b></label>
+              <Form.Input
+                icon='user'
+                iconPosition='left'
+                className="sign-up-input"
+                type="username"
+                placeholder="Username"
+                name="username"
+                value={this.state.username}
+                onChange={this.handleAllChange}
+              />
 
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor="username"><b>Username</b></label>
-          <input
-            type="username"
-            id="username"
-            placeholder="Enter username"
-            name="username"
-            value={this.state.username}
-            onChange={this.handleAllChange}
-          />
+              <label className="sign-up-label"><b>Bio</b></label>
+              <Form.Input
+                icon='user'
+                iconPosition='left'
+                className="sign-up-input"
+                type="bio"
+                placeholder="Enter bio"
+                name="bio"
+                value={this.state.bio}
+                onChange={this.handleAllChange}
+              />
 
-            <label htmlFor="bio"><b>bio</b></label>
-            <input
-              type="bio"
-              placeholder="Enter bio"
-              name="bio"
-              value={this.state.bio}
-              onChange={this.handleAllChange}/>
-
-              <label htmlFor="picture"><b>picture</b></label>
-              <input
+              <label className="sign-up-label"><b>Picture</b></label>
+              <Form.Input
+                icon='file image'
+                iconPosition='left'
+                className="sign-up-input"
                 type="picture"
-                placeholder="upload picture"
+                placeholder="Picture"
                 name="picture"
                 value={this.state.picture}
-                onChange={this.handleAllChange}/>
+                onChange={this.handleAllChange}
+              />
 
-                <label htmlFor="psw"><b>Password</b></label>
-                <input
-                  type="password"
-                  placeholder="Enter Password"
-                  name="password"
-                  value={this.state.password}
-                  onChange={this.handleAllChange}
-                  />
-                <input type="submit" value="submit"/>
-                </form>
+              <label className="sign-up-label"><b>Password</b></label>
+              <Form.Input
+                icon='lock'
+                iconPosition='left'
+                className="sign-up-input"
+                type="password"
+                placeholder="Password"
+                name="password"
+                value={this.state.password}
+                onChange={this.handleAllChange}
+              />
+            </Form.Field>
+            <Form.Field className="sign-up-submit-btn" color="black" control={Button}>Sign up</Form.Field>
+          </Form>
+        </Modal.Description>
+      </div>
     );
   }
 }

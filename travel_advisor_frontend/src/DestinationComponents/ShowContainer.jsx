@@ -3,7 +3,7 @@ import CommentContainer from './CommentContainer'
 import CommentForm from './CommentForm'
 import PhotoContainer from './PhotoContainer'
 import ThingsToDoContainer from './ThingsToDoContainer'
-import { Button } from 'semantic-ui-react'
+import { Button, Card } from 'semantic-ui-react'
 
 class ShowContainer extends Component {
 
@@ -69,13 +69,13 @@ class ShowContainer extends Component {
   render() {
     let { things_to_dos } = this.state
 
-    let thingsToDo = !things_to_dos ? null : things_to_dos.map(thingstodo => <ThingsToDoContainer key={thingstodo.id} thingstodo={thingstodo}/> )
+    let thingsToDo = !things_to_dos ? null : things_to_dos.map(thingstodo => <ThingsToDoContainer key={thingstodo.id} thingstodo={thingstodo}/>)
 
     return (
       <div>
         <Button onClick={this.addToBucketList} className="add-to-bucketlist">+ Add to bucketlist</Button>
         <PhotoContainer destination={this.state}/>
-        {thingsToDo}
+        <Card.Group className="things-to-do-container">{thingsToDo}</Card.Group>
         <CommentForm createComment={this.createComment}/>
         <CommentContainer destination={this.state}/>
       </div>
