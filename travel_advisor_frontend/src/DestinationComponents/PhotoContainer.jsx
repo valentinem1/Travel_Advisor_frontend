@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, Header } from 'semantic-ui-react'
+import { Image, Header, Segment, Container } from 'semantic-ui-react'
 
 class PhotoContainer extends Component {
 
@@ -8,10 +8,10 @@ class PhotoContainer extends Component {
     let {name, bio, photo} = this.props.destination
 
     return (
-        <div className="ui segment">
-          <Header className="destName">{name}</Header>
-        <Image className="destination-image" src={photo} alt={name} />
-        <p className = "bio">{bio}</p>
+        <div className="destination-show-container">
+          <Header className="destination-showpage-name">{name}</Header>
+          <Image className="destination-showpage-image" src={photo} alt={name} />
+          <p className="destination-showpage-bio">{bio}</p>
         </div>
 
     );
