@@ -32,7 +32,7 @@ class SignUp extends Component {
       if (!newUser.error) {
         localStorage.setItem("token", newUser.token)
         this.props.createNewUser(newUser)
-        this.props.routerProps.history.push("/")
+        this.props.history.push("/")
         
       }
     })

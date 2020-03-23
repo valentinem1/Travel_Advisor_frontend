@@ -25,7 +25,7 @@ class DestinationCard extends Component {
 
   render() {
 
-    let {name, bio, photo, trip_type} = this.props.destination
+    let {name, photo, trip_type} = this.props.destination
     
     return (
 
