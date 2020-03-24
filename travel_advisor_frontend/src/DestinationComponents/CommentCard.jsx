@@ -1,21 +1,33 @@
 import React, { Component } from 'react';
-import { Container, Rating, Segment } from 'semantic-ui-react'
+import { Container, Card, Rating } from 'semantic-ui-react'
 
 class CommentCard extends Component {
 
+  handleDelete = () => {
+    let review_id = this.props.review.id
+
+    this.props.deleteReview(review_id)
+  }
+
+  showDeleteButton = () => {
+      if(localStorage.token && this.props.review.user_id === this.props.user.id){
+          return <span className="review-delete-button" onClick={this.handleDelete}>&times;</span>
+      }
+  }
+  
   render() {
     let {comment, rating, username} = this.props.review
 
     return (
-
       <Container className="review-container">
-        <p className="review-username">{username}</p>
-        <div className="comment-rating-card">
-          <p className="review-comment-card">{comment}</p>
-          <span className="span-separation"> - </span>
-          <Rating className="rating-stars-card" defaultRating={rating} icon="star" maxRating={5} disabled />
-        </div>
-        <hr className="review-separation" />
+        <Card className="comment-card">
+          {this.showDeleteButton()}
+          <p className="review-username">{username}</p>
+          <div className="comment-rating-card">
+            <Rating className="rating-stars-card" defaultRating={rating} icon="star" maxRating={5} disabled />
+            <p className="review-comment-card">{comment}</p>
+          </div>
+        </Card>
       </Container>
     );
   }

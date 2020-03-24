@@ -106,7 +106,7 @@ class App extends Component {
           />} />
           <Route exact path='/profile' component={ ProfileContainer } />
           <Route exact path='/signup' render={ (routerProps) => <SignUp createNewUser={this.createNewUser} routerProps={routerProps} /> }/>
-          <Route  path='/:name/:id' component={ ShowContainer } user={this.state.user} />
+          <Route  path='/:name/:id' render={ (routerProps) => <ShowContainer user={this.state.user} routerProps={routerProps} /> }/>
           <Route component = {NotFound} />
         </Switch>
       </div>

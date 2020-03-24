@@ -14,7 +14,7 @@ body{
 
 .page-logo{
   width: 3vw !important;
-  height: 4vh !important;
+  height: 5vh !important;
   border-radius: 5vw !important;
   margin-top: 0vh !important;
   margin-left: 3vw !important;
@@ -137,14 +137,14 @@ body{
 
 .home-page-picture{
   width: 100vw;
-  height: 35vh;
+  height: 40vh;
   margin-top: -3vh;
   z-index: -1;
 }
 
 /* search bar */
 .search-form{
-  margin-top: -11vw;
+  margin-top: -12vw;
   margin-left: 30vw;
 }
 
@@ -205,7 +205,7 @@ body{
   background-color: #15ddab;
   width: 5vw;
   margin-left: 1vw;
-  margin-top: -16vw;
+  margin-top: -15vw;
 }
 
 .welcome-message{
@@ -354,34 +354,46 @@ body{
   margin-left: 15vw !important;
 }
 
+.comment-card{
+  margin-bottom: 2vh !important;
+}
+
 .review-username{
   font-size: 0.8vw;
-  margin-bottom: 1vh;
+  margin-bottom: 0.5vh;
+  margin-left: 2vw;
+  margin-top: -1.5vh;
+  text-decoration: underline;
 }
 
 .comment-rating-card{
-  display: flex;
-  align-items: center;
-}
-
-.review-comment-card{
-  font-size: 2.5vh;
-}
-
-.span-separation{
-  margin-top: -1.8vh;
-  margin-left: 0.7vw;
+  margin-left: 2vw;
+  margin-bottom: 1.5vh;
 }
 
 .rating-stars-card{
-  margin-top: -1.8vh !important;
-  margin-left: 0.7vw !important;
+  margin-bottom: 0.5vh;
+  margin-left: 0.7vw;
+  font-size: 1.4vh !important;
 }
 
-.review-separation{
-  width: 10vw;
-  margin-left: 0vw;
-  margin-top: -0.5vh;
+.review-comment-card{
+  font-size: 2.2vh;
+  margin-left: 0.7vw;
+}
+
+.review-delete-button{
+  margin-left: 35vh;
+  margin-bottom: 1vh;
+  font-size: 1.4vw;
+}
+
+.review-delete-button:hover{
+  cursor: pointer;
+  margin-left: 35vh;
+  margin-bottom: 1vh;
+  font-size: 1.4vw;
+  color: #5a5a5a;
 }
 
 .create-review-button{
@@ -389,4 +401,67 @@ body{
   margin-bottom: 50vh !important;
   background-color: #000000 !important;
   color: #ffffff !important;
+}
+
+/* profile page css */
+.ui.image.profile-cover-photo{
+  width: 100vw !important;
+  height: 40vh;
+  margin-top: -3vh;
+  z-index: -1;
+}
+
+.photo-container{
+  margin-top: -5vh !important;
+  margin-left: 15vw !important;
+  border-radius: 0vw !important;
+  width: 70vw;
+}
+
+.ui.image.profile-picture{
+  width: 8vw;
+  border-radius: 8vw !important;
+  margin-bottom: 2vh;
+}
+
+.profile-bio{
+  margin-top: 2vh;
+  font-weight: 500;
+  font-size: 1.2vw;
+  display: block;
+}
+
+.photo-header-container{
+  display: flex;
+  align-items: center;
+}
+
+.photo-contribution-title{
+  margin-left: 2vw;
+  font-weight: bold;
+  font-size: 1.5vw;
+}
+
+.photo-contribution-number{
+  color: #767676;
+  font-weight: bold;
+  font-size: 1.5vw;
+  margin-left: 2.3vw;
+  margin-top: 1vh;
+  display: block;
+}
+
+.photo-bucketllist-title{
+  margin-left: 2vw;
+  font-weight: bold;
+  font-size: 1.5vw;
+}
+
+.photo-bucketlist-number{
+  color: #767676;
+  font-weight: bold;
+  font-size: 1.5vw;
+  margin-left: 2.3vw;
+  margin-top: 1vh;
+  display: block;
 }
