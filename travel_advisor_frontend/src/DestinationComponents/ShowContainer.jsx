@@ -11,10 +11,10 @@ class ShowContainer extends Component {
   }
 
   componentDidMount() {
-    let destination_id = this.props.match.params.id
+    let destination_id = this.props.routerProps.match.params.id
     fetch(`http://localhost:4000/destinations/${destination_id}`)
-    .then(r=>r.json())
-    .then((destination) => {
+    .then(r => r.json())
+    .then(destination => {
       this.setState({
         ...destination
       })
@@ -40,6 +40,21 @@ class ShowContainer extends Component {
       let reviewArr = [...this.state.reviews, newReview]
       this.setState({
         reviews: reviewArr
+      })
+    })
+  }
+
+  deleteReview = (review_id) => {
+
+    fetch(`http://localhost:4000/reviews/${review_id}`, {
+      method: "DELETE"
+    })
+    .then(r => r.json())
+    .then(deletedReview => {
+      let newReviewArr = this.state.reviews.filter(review => review.id !== deletedReview.review.id)
+      this.setState({
+        ...this.state,
+        reviews: newReviewArr
       })
     })
   }
@@ -75,7 +90,7 @@ class ShowContainer extends Component {
         <PhotoContainer destination={this.state}/>
         <Header className="things-to-do-container-header">Things to Do</Header>
         <Card.Group className="things-to-do-container">{thingsToDo}</Card.Group>
-        <CommentContainer createComment={this.createComment} destination={this.state}/>
+        <CommentContainer routerProps={this.props.routerProps} deleteReview={this.deleteReview} createComment={this.createComment} destination={this.state} user={this.props.user} />
       </div>
     );
   }

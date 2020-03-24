@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PhotoCard from './PhotoCard'
-import ContributionContainer from './ContributionContainer'
 import BucketlistContainer from './BucketlistContainer'
+import { Image } from 'semantic-ui-react'
 
 class ProfileContainer extends Component {
 
@@ -25,13 +25,13 @@ class ProfileContainer extends Component {
   
   render() {
 
-    let { username, picture, reviews, bucketlist } = this.state
+    let { bucketlist } = this.state
 
     return (
       <div>
-        <PhotoCard picture={picture} username={username}/>
+        <Image className="profile-cover-photo" src="https://www.katikiesmykonos.com/wp-content/uploads/2019/09/drz_katikies-mykonos_q1a0346.jpg" alt="" />
+        <PhotoCard profile_info={this.state} />
         <BucketlistContainer bucketlist={bucketlist} />
-        <ContributionContainer reviews={reviews} />
       </div>
     );
   }

@@ -20,6 +20,11 @@ class CommentForm extends Component {
   handleSubmit=(evt)=>{
     evt.preventDefault()
     this.props.createComment(this.state)
+    
+    this.setState({
+      comment: "",
+      rating: 0
+    })
   }
 
 

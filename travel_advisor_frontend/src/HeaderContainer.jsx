@@ -15,7 +15,7 @@ class HeaderContainer extends Component {
       <div className="page-header">
         <Link to="/">
           <div className="logo-title-header">
-            <Image src="https://www.underconsideration.com/brandnew/archives/tripadvisor_logo_icon_detail.png" alt="logo" className="page-logo"/>
+            <Image src="https://static.tacdn.com/favicon.ico?v2" alt="logo" className="page-logo"/>
             <Header className="page-title">Travel Advisor</Header>
           </div>
         </Link>
