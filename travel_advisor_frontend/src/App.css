@@ -1,6 +1,6 @@
 /* Home page css */
 body{
-  background-color: rgb(243, 243, 243);
+  background-color: #f3f3f3;
   position: relative;
   margin: 0;
   padding: 0;
@@ -350,19 +350,22 @@ body{
 }
 
 /* review/rating css */
-.container-container{
-  margin-left: 15vw !important;
+.comment-segment{
+  width: 50vw;
+  margin-left: 8vw !important;
+  height: 40vh;
 }
 
 .comment-card{
   margin-bottom: 2vh !important;
+  border-radius: 0vw !important;
 }
 
 .review-username{
   font-size: 0.8vw;
   margin-bottom: 0.5vh;
   margin-left: 2vw;
-  margin-top: -1.5vh;
+  margin-top: -2.7vh;
   text-decoration: underline;
 }
 
@@ -380,6 +383,8 @@ body{
 .review-comment-card{
   font-size: 2.2vh;
   margin-left: 0.7vw;
+  margin-bottom: -1vh !important;
+  white-space: pre-line !important;
 }
 
 .review-delete-button{
@@ -396,8 +401,23 @@ body{
   color: #5a5a5a;
 }
 
-.create-review-button{
+.comment-form-input{
+  width: 20vw !important;
+  min-height: 2vh !important;
+  border-radius: 5vw !important;
+  font-size: 0.9vw !important;
+  overflow: hidden !important;
+  resize: none !important;
   margin-top: 2vh !important;
+}
+
+.comment-form-rating{
+  margin-top: 1vh !important;
+  display: block !important;
+}
+
+.create-review-button{
+  margin-top: 1vh !important;
   margin-bottom: 50vh !important;
   background-color: #000000 !important;
   color: #ffffff !important;
