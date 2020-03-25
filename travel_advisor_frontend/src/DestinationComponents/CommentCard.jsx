@@ -20,14 +20,14 @@ class CommentCard extends Component {
 
     return (
       <Container className="review-container">
-        <Card className="comment-card">
+        {/* <Card className="comment-card"> */}
           {this.showDeleteButton()}
           <p className="review-username">{username}</p>
           <div className="comment-rating-card">
             <Rating className="rating-stars-card" defaultRating={rating} icon="star" maxRating={5} disabled />
             <p className="review-comment-card">{comment}</p>
           </div>
-        </Card>
+        {/* </Card> */}
       </Container>
     );
   }

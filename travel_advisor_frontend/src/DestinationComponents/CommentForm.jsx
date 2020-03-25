@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TextareaAutosize from 'react-textarea-autosize';
 import { Form, Button, Rating } from 'semantic-ui-react'
 
 class CommentForm extends Component {
@@ -10,7 +11,7 @@ class CommentForm extends Component {
 
   handleChange = (event, { rating }) => {
     let {name, value} = event.target
-
+    
     this.setState({
         [name]: value,
         rating
@@ -32,20 +33,21 @@ class CommentForm extends Component {
     return (
 
       <Form onSubmit={this.handleSubmit}>
-        <Form.TextArea
-            className=""
-            label='Leave a review here:'
-            placeholder="Write your thoughts"
-            name="comment"
-            value={this.state.comment}
-            onChange={this.handleChange}
+        <TextareaAutosize 
+          class="comment-form-input"
+          label='Leave a review here:'
+          placeholder="Write your thoughts"
+          name="comment"
+          value={this.state.comment}
+          onChange={this.handleChange}
         />
         <Rating
-            icon="star"
-            name="rating"
-            onRate={this.handleChange}
-            maxRating={5} 
-            clearable
+          className="comment-form-rating"
+          icon="star"
+          name="rating"
+          onRate={this.handleChange}
+          maxRating={5} 
+          clearable
         />
         <br/>
         <Button className="create-review-button" type='submit'>Submit</Button>
