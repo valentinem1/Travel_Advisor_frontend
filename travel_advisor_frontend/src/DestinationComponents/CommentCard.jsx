@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Container, Card, Rating } from 'semantic-ui-react'
+import { Container, Rating } from 'semantic-ui-react'
 
 class CommentCard extends Component {
 
   handleDelete = () => {
     let review_id = this.props.review.id
-
+    console.log(this)
     this.props.deleteReview(review_id)
   }
 
@@ -20,14 +20,12 @@ class CommentCard extends Component {
 
     return (
       <Container className="review-container">
-        {/* <Card className="comment-card"> */}
           {this.showDeleteButton()}
           <p className="review-username">{username}</p>
           <div className="comment-rating-card">
             <Rating className="rating-stars-card" defaultRating={rating} icon="star" maxRating={5} disabled />
             <p className="review-comment-card">{comment}</p>
           </div>
-        {/* </Card> */}
       </Container>
     );
   }

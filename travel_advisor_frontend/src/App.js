@@ -8,6 +8,7 @@ import ProfileContainer from './ProfileComponents/ProfileContainer'
 import ShowContainer from './DestinationComponents/ShowContainer'
 import HeaderContainer from './HeaderContainer.jsx'
 import NotFound from './NotFound'
+import Footer from './Footer'
 
 class App extends Component {
 
@@ -109,6 +110,8 @@ class App extends Component {
           <Route  path='/:name/:id' render={ (routerProps) => <ShowContainer user={this.state.user} routerProps={routerProps} /> }/>
           <Route component = {NotFound} />
         </Switch>
+
+        <Footer />
       </div>
 
     )
