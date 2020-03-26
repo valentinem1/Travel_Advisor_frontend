@@ -16,7 +16,7 @@ class HeaderContainer extends Component {
         <Link to="/">
           <div className="logo-title-header">
             <Image src="https://static.tacdn.com/favicon.ico?v2" alt="logo" className="page-logo"/>
-            <Header className="page-title">Travel Advisor</Header>
+            <Header className="page-title">TravelAdvisor</Header>
           </div>
         </Link>
         <Header className="header-buttons">
