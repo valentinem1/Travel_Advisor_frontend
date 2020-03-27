@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import './App.css';
 import { Route, Switch } from 'react-router'
-import SignUp from './HomeComponents/SignUp'
 import HomeContainer from './HomeComponents/HomeContainer'
 import ProfileContainer from './ProfileComponents/ProfileContainer'
 import ShowContainer from './DestinationComponents/ShowContainer'
@@ -90,23 +89,22 @@ class App extends Component {
   }
 
   render() {
+    
     return (
 
       <div className="page-window">
-          <HeaderContainer createNewUser={this.createNewUser} historyProps={this.props} />
+          <HeaderContainer createNewUser={this.createNewUser} loginUser={this.loginUser} historyProps={this.props} />
           <hr className="header-separation"/>
 
         <Switch>
           <Route exact path='/' render={ () => <HomeContainer
           destinations={this.filterSearch()}
-          loginUser={this.loginUser}
           search={this.state.search}
           updateSearchForm={this.updateSearchForm}
-          historyProps={this.props}
+          routerProps={this.props}
           user={this.state.user}
           />} />
-          <Route exact path='/profile' component={ ProfileContainer } />
-          <Route exact path='/signup' render={ (routerProps) => <SignUp createNewUser={this.createNewUser} routerProps={routerProps} /> }/>
+          <Route exact path='/profile' render={ (routerProps) => <ProfileContainer routerProps={routerProps} />} />
           <Route  path='/:name/:id' render={ (routerProps) => <ShowContainer user={this.state.user} routerProps={routerProps} /> }/>
           <Route component = {NotFound} />
         </Switch>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom"
 import { Header, Button, Image, Modal } from 'semantic-ui-react'
 import SignUp from './HomeComponents/SignUp'
+import Login from './HomeComponents/Login'
 
 class HeaderContainer extends Component {
 
@@ -27,9 +28,14 @@ class HeaderContainer extends Component {
               </Link> 
               <Button className="logout-btn" onClick={this.logOutUser}>Logout</Button>
             </> : 
-            <Modal trigger={<Button className="sign-up-btn">Sign up</Button>}>
-              <SignUp createNewUser={this.props.createNewUser} history={this.props.historyProps.history}/>
+            <>
+            <Modal trigger={<Button className="sign-up-btn">Log in</Button>}>
+              <Login loginUser={this.props.loginUser} history={this.props.historyProps.history}/>
             </Modal>
+            <Modal trigger={<Button className="sign-up-btn">Sign up</Button>}>
+            <SignUp createNewUser={this.props.createNewUser} history={this.props.historyProps.history}/>
+          </Modal>
+          </>
           }
         </Header>
       </div>

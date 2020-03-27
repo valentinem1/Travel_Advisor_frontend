@@ -23,8 +23,17 @@ class DestinationCard extends Component {
     })
   }
 
-  render() {
+  // showDeleteButton = () => {
+  //   if(localStorage.token && this.props.review.user_id === this.props.user.id){
+  //       return <span className="review-delete-button" onClick={this.handleDelete}>&times;</span>
+  //   }
+  // }
 
+  handleDelete = () => {
+    console.log(this.props.add_joiner)
+  }
+
+  render() {
     let {name, photo, trip_type} = this.props.destination
     
     return (
@@ -40,6 +49,7 @@ class DestinationCard extends Component {
                 </Card.Content> 
               </> : ""
             }
+            {this.props.routerProps.location.pathname === "/profile" ? <span className="bucketlist-delete-button" onClick={this.handleDelete}>&times;</span> : null}
           </Card.Content>
         </Card>
     );

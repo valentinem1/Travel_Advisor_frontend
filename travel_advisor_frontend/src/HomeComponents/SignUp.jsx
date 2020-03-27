@@ -41,15 +41,15 @@ class SignUp extends Component {
   render() {
     return (
       <div>
-        <Modal.Header className="sign-up-form-header">Sign up</Modal.Header>
+        <Modal.Header className="sign-up-login-form-header">Sign up</Modal.Header>
         <Modal.Description>
-          <Form className="sign-up-form" onSubmit={this.handleSubmit}>
+          <Form className="sign-up-login-form" onSubmit={this.handleSubmit}>
             <Form.Field>
-              <label className="sign-up-label"><b>Username</b></label>
+              <label className="sign-up-login-label"><b>Username</b></label>
               <Form.Input
                 icon='user'
                 iconPosition='left'
-                className="sign-up-input"
+                className="sign-up-login-input"
                 type="username"
                 placeholder="Username"
                 name="username"
@@ -57,11 +57,11 @@ class SignUp extends Component {
                 onChange={this.handleAllChange}
               />
 
-              <label className="sign-up-label"><b>Bio</b></label>
+              <label className="sign-up-login-label"><b>Bio</b></label>
               <Form.Input
                 icon='user'
                 iconPosition='left'
-                className="sign-up-input"
+                className="sign-up-login-input"
                 type="bio"
                 placeholder="Enter bio"
                 name="bio"
@@ -69,11 +69,11 @@ class SignUp extends Component {
                 onChange={this.handleAllChange}
               />
 
-              <label className="sign-up-label"><b>Picture</b></label>
+              <label className="sign-up-login-label"><b>Picture</b></label>
               <Form.Input
                 icon='file image'
                 iconPosition='left'
-                className="sign-up-input"
+                className="sign-up-login-input"
                 type="picture"
                 placeholder="Picture"
                 name="picture"
@@ -81,11 +81,11 @@ class SignUp extends Component {
                 onChange={this.handleAllChange}
               />
 
-              <label className="sign-up-label"><b>Password</b></label>
+              <label className="sign-up-login-label"><b>Password</b></label>
               <Form.Input
                 icon='lock'
                 iconPosition='left'
-                className="sign-up-input"
+                className="sign-up-logininput"
                 type="password"
                 placeholder="Password"
                 name="password"
@@ -93,7 +93,7 @@ class SignUp extends Component {
                 onChange={this.handleAllChange}
               />
             </Form.Field>
-            <Form.Field className="sign-up-submit-btn" color="black" control={Button}>Sign up</Form.Field>
+            <Form.Field className="sign-up-login-submit-btn" color="black" control={Button}>Sign up</Form.Field>
           </Form>
         </Modal.Description>
       </div>

@@ -15,8 +15,8 @@ class HomeContainer extends Component {
           updateSearchForm={this.props.updateSearchForm}
         />
         <div className="auth-destination-container">
-          <AuthContainer user={this.props.user} loginUser={this.props.loginUser} />
-          <DestinationContainer destinations={this.props.destinations}/>
+          <AuthContainer user={this.props.user} />
+          <DestinationContainer destinations={this.props.destinations} routerProps={this.props.routerProps}/>
         </div>
       </div>
     );
