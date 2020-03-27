@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import DestinationCard from '../HomeComponents/DestinationCard'
-import {Link} from 'react-router-dom'
+import BucketlistCard from './BucketlistCard'
+
 import { Container, Header, Card } from 'semantic-ui-react'
 
 class BucketlistContainer extends Component {
 
   render() {
-    let bucketlistDestination = !this.props.bucketlist ? null : this.props.bucketlist.map(destination => <Link key={destination.id} to={`/${destination.name}/${destination.id}`}> <DestinationCard  destination={destination} routerProps={this.props.routerProps} /> </Link>)
+    let bucketlistDestination = !this.props.bucketlist ? null : this.props.bucketlist.map(destination => <BucketlistCard  key={destination.id} destination={destination} routerProps={this.props.routerProps} />)
     
     return (
       <Container className="bucketlist-container">

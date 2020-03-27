@@ -193,12 +193,14 @@ body{
   width: 18vw !important;
   margin-left: 2vw !important;
   margin-top: 2vh !important;
-  margin-bottom: 3vh !important;
+  margin-bottom: 2vh !important;
+  border-radius: 0vw !important;
 }
 
-.ui.card>.image>img{
+.destination-card-image img{
   width: 18vw !important;
   height: 25vh !important;
+  border-radius: 0vw !important;
 }
 
 .ui.card>.image>img:hover{
@@ -228,6 +230,7 @@ body{
   color: #020202 !important;
   font-weight: bold !important;
   opacity: 0.2 !important;
+  height: 5vh !important;
 }
 
 /* Destination show page css */
@@ -469,6 +472,12 @@ body{
 .bucketlist-group-card{
   margin-top: 4vh !important;
 }
+
+/* .bucketlist-delete-button{
+  margin-top: 5vh !important;
+  margin-bottom: 2vh !important;
+  margin-left: 2vw !important;
+} */
 
 /* footer container css */
 .footer-container{
