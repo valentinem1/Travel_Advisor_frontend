@@ -197,18 +197,18 @@ body{
   border-radius: 0vw !important;
 }
 
+.destination-card:hover{
+  opacity: 0.8 !important;
+}
+
 .destination-card-image img{
   width: 18vw !important;
   height: 25vh !important;
   border-radius: 0vw !important;
 }
 
-.ui.card>.image>img:hover{
-  opacity: 0.5 !important;
-}
-
 .destination-header{
-  margin-top: -25vh !important;
+  margin-top: -26vh !important;
   position: absolute !important;
   color: #020202 !important;
   font-weight: bold !important;
@@ -225,12 +225,13 @@ body{
 }
 
 .hover-destination-header{
-  margin-top: -25vh !important;
+  margin-top: 2vh !important;
+  margin-left: 1vw !important;
   position: absolute !important;
   color: #020202 !important;
   font-weight: bold !important;
-  opacity: 0.2 !important;
-  height: 5vh !important;
+  /* opacity: 0.2 !important; */
+  /* height: 5vh !important; */
 }
 
 /* Destination show page css */
