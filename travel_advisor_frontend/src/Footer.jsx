@@ -17,7 +17,7 @@ class Footer extends Component {
                     <Image className="footer-image" src={logo} alt="trip advisor logo"/>
                     <Header className="footer-title">TravelAdvisor</Header>
                 </div>
-                <span class="footer-certified-logo">&copy; {this.actualYear()} TravelAdvisor All rights reserved.</span>
+                <span className="footer-certified-logo">&copy; {this.actualYear()} TravelAdvisor All rights reserved.</span>
                 <p className="footer-website-rights">TravelAdvisor is not a booking agent or tour operator, and does not charge any service fees to users of our site. Our mission is to provide you the best informations for your traveling. For booking please contact any airlines, travel providers, and booking agents who list airfare, tours, and travel packages. TravelAdvisor</p>
             </div>
         );

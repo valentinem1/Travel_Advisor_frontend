@@ -24,14 +24,14 @@ class ProfileContainer extends Component {
   }
   
   render() {
-
+    console.log(this.state)
     let { bucketlist } = this.state
 
     return (
       <div>
         <Image className="profile-cover-photo" src="https://www.katikiesmykonos.com/wp-content/uploads/2019/09/drz_katikies-mykonos_q1a0346.jpg" alt="" />
         <PhotoCard profile_info={this.state} />
-        <BucketlistContainer bucketlist={bucketlist} />
+        <BucketlistContainer bucketlist={bucketlist} routerProps={this.props.routerProps}/>
       </div>
     );
   }

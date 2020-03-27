@@ -94,7 +94,7 @@ body{
   padding-top: 4vh !important;
 }
 
-.sign-up-form-header{
+.sign-up-login-form-header{
   text-align: center !important;
   font-size: 2vw;
   font-weight: bold;
@@ -104,29 +104,29 @@ body{
   color: #15ddab;
 }
 
-.sign-up-form{
+.sign-up-login-form{
   display: grid;
   justify-content: center;
   align-items: center;
 }
 
-.sign-up-label{
+.sign-up-login-label{
   text-align: center;
   font-size: 1.1vw !important;
   font-family: Trip Sans, Arial, sans-serif;
   margin-bottom: 2vh !important;
 }
 
-.sign-up-input{
+.sign-up-login-input{
   width: 15vw !important;
   align-items: center !important;
 }
 
-.sign-up-submit-btn{
+.sign-up-login-submit-btn{
   display: grid;
   justify-content: center;
   align-items: center;
-  margin-top: 5vh !important;
+  margin-top: 3vh !important;
 }
 
 .header-separation{
@@ -158,45 +158,6 @@ body{
   align-items: center;
 }
 
-/* login form css */
-.login-form {
-  padding-left: 6vw;
-  padding-right: 8vw;
-  background-color: #15ddab;
-  width: 4vw;
-  border-radius: 1rem;
-  margin-left: 1vw;
-  margin-top: 4vw;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  overflow-x: hidden;
-}
-
-.login-input{
-  width: 12vw !important;
-  height: 5vh !important;
-  margin-left: -5vw !important;
-  margin-top: 1.7vh !important;
-  margin-bottom: 1vh !important;
-}
-
-.login-username-label{
-  width: 5vw !important;
-  font-size: 1vw !important;
-  font-weight: bold !important;
-  margin-left: -1.6vw !important;
-  margin-top: 2vh !important;
-}
-
-.login-submit-btn{
-  margin-top: 2vh !important;
-  margin-left: -1.8vw !important;
-  margin-bottom: 3vh !important;
-  width: 10vw !important;
-}
-
 .welcome-container{
   padding-left: 6vw;
   padding-right: 6vw;
@@ -217,7 +178,7 @@ body{
 
 /* home page destination cards */
 .destination-container{
-  margin-left: 1.5vw !important;
+  margin-left: 8vw !important;
   margin-top: 20vh !important;
 }
 
