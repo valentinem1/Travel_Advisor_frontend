@@ -24,7 +24,7 @@ class ProfileContainer extends Component {
   }
   
   render() {
-    // console.log(this.state.bucketlist)
+
     let { bucketlist } = this.state
 
     return (

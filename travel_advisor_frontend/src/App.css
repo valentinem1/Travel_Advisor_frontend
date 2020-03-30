@@ -267,8 +267,12 @@ body{
 .destination-showpage-image{
   width: 62vw !important;
   height: 50vh !important;
-  margin-left: 19vw !important;
+  margin-left: 18.5vw !important;
   border-radius: 0.5vw !important;
+}
+
+.destination-showpage-type{
+  text-align: center;
 }
 
 .destination-showpage-bio{
@@ -296,7 +300,7 @@ body{
   width: 20vw !important;
 }
 
-.ui.image.things-to-do-image{
+img.ui.image.things-to-do-image{
   width: 20vw;
   height: 25vh;
   border-radius: 0vw !important;
@@ -473,6 +477,56 @@ body{
 .bucketlist-group-card{
   margin-top: 4vh !important;
 }
+
+.bucketlist-card{
+  width: 19vw !important;
+  height: 25vh !important;
+}
+
+.bucketlist-header{
+  margin-top: -13vh !important;
+  position: absolute !important;
+  color: #020202 !important;
+  font-weight: bold !important;
+}
+
+.bucketlist-image{
+  height: 25vh !important;
+  width: 19vw !important;
+  position: absolute !important;
+}
+
+.bucketlist-delete-btn{
+  font-size: 25vw;
+  font-weight: 0;
+  z-index: 1;
+  text-align: center;
+  margin-top: 10vh;
+  opacity: 0;
+}
+
+.bucketlist-card:hover .bucketlist-delete-btn{
+  cursor: pointer;
+  font-size: 25vw;
+  font-weight: -5;
+  z-index: 1;
+  text-align: center;
+  margin-top: 10vh;
+  opacity: 1;
+}
+
+.bucketlist-card:hover .bucketlist-image{
+  opacity: 0.5;
+}
+
+/* .bucketlist-delete-btn:hover{
+  cursor: pointer;
+  font-size: 25vw;
+  font-weight: 0;
+  z-index: 1;
+  text-align: center;
+  margin-top: 10vh;
+} */
 
 /* .bucketlist-delete-button{
   margin-top: 5vh !important;

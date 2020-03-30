@@ -1,31 +1,11 @@
 import React, { Component } from 'react';
-import { Card, Image, Header, Reveal } from 'semantic-ui-react'
+import { Card, Image, Header } from 'semantic-ui-react'
 
 class DestinationCard extends Component {
 
-  // state={
-  //   contentHover: false
-  // }
-
-  // trueHover = () => {
-  //   this.setState(prevState => {
-  //     return{
-  //       contentHover: !prevState.contentHover
-  //     }
-  //   })
-  // }
-
-  // falseHover = () => {
-  //   this.setState(prevState => {
-  //     return{
-  //       contentHover: !prevState.contentHover
-  //     }
-  //   })
-  // }
-
   render() {
 
-    let {name, photo, trip_type} = this.props.destination
+    let { name, photo } = this.props.destination
     
     return (
       <Card className="destination-card">
