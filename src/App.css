@@ -574,3 +574,15 @@ img.ui.image.things-to-do-image{
   font-size: 0.8vw;
   margin-right: 5vw;
 }
+
+/* not found css */
+.not-found-header{
+  text-align: center;
+  margin-top: 8vh !important;
+  font-size: 3.5vw !important;
+}
+
+.not-found-image{
+  margin: auto !important;
+  margin-top: 8vh !important;
+}

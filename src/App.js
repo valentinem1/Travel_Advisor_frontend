@@ -7,6 +7,7 @@ import ProfileContainer from './ProfileComponents/ProfileContainer'
 import ShowContainer from './DestinationComponents/ShowContainer'
 import HeaderContainer from './HeaderContainer.jsx'
 import Footer from './Footer'
+import NotFound from './NotFound';
 
 class App extends Component {
 
@@ -103,7 +104,7 @@ class App extends Component {
           routerProps={this.props}
           user={this.state.user}
           />} />
-          <Route exact path='/profile' render={ (routerProps) => <ProfileContainer routerProps={routerProps} />} />
+          <Route exact path='/profile' render={localStorage.token ? (routerProps) => <ProfileContainer routerProps={routerProps} /> : (routerProps) => <NotFound />}/>
           <Route  path='/:name/:id' render={ (routerProps) => <ShowContainer user={this.state.user} routerProps={routerProps} /> }/>
         </Switch>
 
