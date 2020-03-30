@@ -230,8 +230,6 @@ body{
   position: absolute !important;
   color: #020202 !important;
   font-weight: bold !important;
-  /* opacity: 0.2 !important; */
-  /* height: 5vh !important; */
 }
 
 /* Destination show page css */
@@ -421,6 +419,15 @@ img.ui.image.things-to-do-image{
   margin-bottom: 2vh;
 }
 
+.profile-delete-btn{
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 0.8vw;
+  font-weight: bold;
+  padding: 0.2vw;
+  margin-left: 62vw;
+}
+
 .profile-bio{
   margin-top: 2vh;
   font-weight: 500;
@@ -484,7 +491,7 @@ img.ui.image.things-to-do-image{
 }
 
 .bucketlist-header{
-  margin-top: -13vh !important;
+  margin-top: -10vh !important;
   position: absolute !important;
   color: #020202 !important;
   font-weight: bold !important;
@@ -496,43 +503,34 @@ img.ui.image.things-to-do-image{
   position: absolute !important;
 }
 
-.bucketlist-delete-btn{
-  font-size: 25vw;
-  font-weight: 0;
-  z-index: 1;
-  text-align: center;
-  margin-top: 10vh;
-  opacity: 0;
+.buckelist-content{
+  display: flex !important;
+  align-items: center !important;
 }
 
 .bucketlist-card:hover .bucketlist-delete-btn{
   cursor: pointer;
-  font-size: 25vw;
-  font-weight: -5;
+  font-size: 1.5vw;
   z-index: 1;
   text-align: center;
-  margin-top: 10vh;
+  margin-top: -10vh;
+  margin-left: 15.5vw;
   opacity: 1;
+  position: absolute;
+  background-color: #b3b3b3;
+  border-radius: 2vh;
+  width: 1.5vw;
+  padding-bottom: 0.3vh;
+  padding-left: -0.3vw;
 }
 
 .bucketlist-card:hover .bucketlist-image{
-  opacity: 0.5;
+  opacity: 0.4;
 }
 
-/* .bucketlist-delete-btn:hover{
-  cursor: pointer;
-  font-size: 25vw;
-  font-weight: 0;
-  z-index: 1;
-  text-align: center;
-  margin-top: 10vh;
-} */
-
-/* .bucketlist-delete-button{
-  margin-top: 5vh !important;
-  margin-bottom: 2vh !important;
-  margin-left: 2vw !important;
-} */
+.bucketlist-card:hover .bucketlist-header{
+  opacity: 0.4;
+}
 
 /* footer container css */
 .footer-container{

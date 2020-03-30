@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Segment, Image } from 'semantic-ui-react'
+import { Segment, Image, Dropdown } from 'semantic-ui-react'
 
 class PhotoCard extends Component {
 
@@ -41,6 +41,12 @@ class PhotoCard extends Component {
             </div>
           </div>
             <span className="profile-bio">{bio}</span>
+            <Dropdown
+              className="profile-delete-btn"
+              floating
+              // options={options}
+              trigger={<React.Fragment />}
+            />
         </Segment>
     );
   }
