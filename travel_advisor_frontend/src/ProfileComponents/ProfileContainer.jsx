@@ -29,7 +29,6 @@ class ProfileContainer extends Component {
           })
           .then(r => r.json())
           .then(deletedItem => {
-            console.log(deletedItem)
               let newBucketListArr = this.state.bucketlist.filter(bucketlistItem => bucketlistItem.id !== deletedItem.id)
 
               this.setState({
@@ -38,14 +37,29 @@ class ProfileContainer extends Component {
               })
           })
   }
+
+  deleteProfile = (userId) => {
+    fetch(`http://localhost:4000/users/${userId}`, {
+      method: "DELETE"
+    })
+    .then( r => r.json())
+    .then(deletedUser => {
+      this.setState({
+        ...this.state
+      })
+      localStorage.clear()
+      this.props.routerProps.history.push("/")
+    })
+  }
   
   render() {
+
     let { bucketlist } = this.state
 
     return (
       <div>
         <Image className="profile-cover-photo" src="https://www.katikiesmykonos.com/wp-content/uploads/2019/09/drz_katikies-mykonos_q1a0346.jpg" alt="" />
-        <PhotoCard profile_info={this.state} />
+        <PhotoCard profile_info={this.state} deleteProfile={this.deleteProfile}/>
         <BucketlistContainer bucketlist={bucketlist} routerProps={this.props.routerProps} deleteBucketItem={this.deleteBucketItem}/>
       </div>
     );

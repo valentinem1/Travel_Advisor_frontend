@@ -23,6 +23,10 @@ class PhotoCard extends Component {
     }
   }
 
+  handleDelete = () => {
+    this.props.deleteProfile(this.props.profile_info.id)
+  }  
+  
   render() {
     
     let { username, picture, bio } = this.props.profile_info
@@ -41,12 +45,15 @@ class PhotoCard extends Component {
             </div>
           </div>
             <span className="profile-bio">{bio}</span>
-            <Dropdown
-              className="profile-delete-btn"
-              floating
-              // options={options}
-              trigger={<React.Fragment />}
-            />
+            <Dropdown icon='cog'>
+              <Dropdown.Menu>
+                <Dropdown.Item 
+                  text='Delete Profile' 
+                  value='delete'
+                  onClick={this.handleDelete}
+                  />
+              </Dropdown.Menu>
+            </Dropdown>
         </Segment>
     );
   }
