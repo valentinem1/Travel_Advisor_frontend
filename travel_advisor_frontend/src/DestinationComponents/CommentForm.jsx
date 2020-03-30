@@ -34,7 +34,7 @@ class CommentForm extends Component {
 
       <Form onSubmit={this.handleSubmit}>
         <TextareaAutosize 
-          class="comment-form-input"
+          className="comment-form-input"
           label='Leave a review here:'
           placeholder="Write your thoughts"
           name="comment"
