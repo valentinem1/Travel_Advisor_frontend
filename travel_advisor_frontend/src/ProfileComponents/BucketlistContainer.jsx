@@ -6,7 +6,7 @@ import { Container, Header, Card } from 'semantic-ui-react'
 class BucketlistContainer extends Component {
 
   render() {
-    let bucketlistDestination = !this.props.bucketlist ? null : this.props.bucketlist.map(bucketlistItem => <BucketlistCard  key={bucketlistItem.id} bucketlistItem={bucketlistItem} routerProps={this.props.routerProps} />)
+    let bucketlistDestination = !this.props.bucketlist ? null : this.props.bucketlist.map(bucketlistItem => <BucketlistCard  key={bucketlistItem.id} bucketlistItem={bucketlistItem} routerProps={this.props.routerProps} deleteBucketItem={this.props.deleteBucketItem}/>)
     
     return (
       <Container className="bucketlist-container">

@@ -4,7 +4,7 @@ import { Card, Image, Header } from 'semantic-ui-react'
 class BucketlistCard extends Component {
 
     handleDelete = () => {
-        console.log(this.props.bucketlistItem.id)
+        this.props.deleteBucketItem(this.props.bucketlistItem.id)
     }
 
     render() {
@@ -12,10 +12,10 @@ class BucketlistCard extends Component {
         let {name, photo} = this.props.bucketlistItem.destination
         return (
             <Card className="bucketlist-card">
-                <span className="bucketlist-delete-btn" onClick={this.handleDelete}>&times;</span>
                 <Image className="bucketlist-image" src={photo} alt="bucketlist destination"/>
-                <Card.Content>
+                <Card.Content className="buckelist-content">
                     <Header className="bucketlist-header">{name}</Header>
+                    <span className="bucketlist-delete-btn" onClick={this.handleDelete}>&times;</span>
                 </Card.Content>
             </Card>
         );
