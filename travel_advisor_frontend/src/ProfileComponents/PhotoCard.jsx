@@ -44,16 +44,18 @@ class PhotoCard extends Component {
               <span className="photo-bucketlist-number">{this.allBucketlistItems()}</span>
             </div>
           </div>
+          <div className="bio-delete-container">
             <span className="profile-bio">{bio}</span>
-            <Dropdown icon='cog'>
+            <Dropdown icon='cog' className="profile-delete-btn">
               <Dropdown.Menu>
-                <Dropdown.Item 
+                <Dropdown.Item
                   text='Delete Profile' 
                   value='delete'
                   onClick={this.handleDelete}
                   />
               </Dropdown.Menu>
             </Dropdown>
+          </div>
         </Segment>
     );
   }

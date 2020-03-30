@@ -420,12 +420,14 @@ img.ui.image.things-to-do-image{
 }
 
 .profile-delete-btn{
-  background-color: #000000;
-  color: #ffffff;
-  font-size: 0.8vw;
-  font-weight: bold;
-  padding: 0.2vw;
-  margin-left: 62vw;
+  border: inherit !important;
+  border-radius: 0.3vw !important;
+  font-weight: bold !important;
+  padding: 0.5vw !important;
+  padding-left: 1.3vw !important;
+  margin-left: 64.5vw !important;
+  margin-top: -15vh !important;
+  width: 4vw;
 }
 
 .profile-bio{
