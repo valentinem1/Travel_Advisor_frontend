@@ -32,8 +32,8 @@ class CommentForm extends Component {
   render() {
     return (
 
-      <Form onSubmit={this.handleSubmit}>
-        <TextareaAutosize 
+      <Form onSubmit={this.handleSubmit} hidden={localStorage.token ? false : true}>
+        <TextareaAutosize
           className="comment-form-input"
           label='Leave a review here:'
           placeholder="Write your thoughts"

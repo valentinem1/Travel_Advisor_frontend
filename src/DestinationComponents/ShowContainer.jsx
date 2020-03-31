@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import CommentContainer from './CommentContainer'
 import PhotoContainer from './PhotoContainer'
 import ThingsToDoContainer from './ThingsToDoContainer'
+import NotFound from '../NotFound'
 import { Button, Card, Header } from 'semantic-ui-react'
 
 class ShowContainer extends Component {
@@ -11,7 +12,7 @@ class ShowContainer extends Component {
   }
 
   componentDidMount() {
-    let destination_id = this.props.routerProps.match.params.id
+    let destination_id = parseInt(this.props.routerProps.match.params.id)
     fetch(`http://localhost:4000/destinations/${destination_id}`)
     .then(r => r.json())
     .then(destination => {
@@ -81,16 +82,23 @@ class ShowContainer extends Component {
 
   render() {
     let { things_to_dos } = this.state
-
     let thingsToDo = !things_to_dos ? null : things_to_dos.map(thingstodo => <ThingsToDoContainer key={thingstodo.id} thingstodo={thingstodo}/>)
-
+    // console.log(this.state.id)
     return (
       <div>
-        <Button onClick={this.addToBucketList} className="add-to-bucketlist">+ Add to bucketlist</Button>
-        <PhotoContainer destination={this.state}/>
-        <Header className="things-to-do-container-header">Things to Do</Header>
-        <Card.Group className="things-to-do-container">{thingsToDo}</Card.Group>
-        <CommentContainer routerProps={this.props.routerProps} deleteReview={this.deleteReview} createComment={this.createComment} destination={this.state} user={this.props.user} />
+        {/* {this.state.id !== undefined && this.state.id === this.props.routerProps.match.params.id ?
+          <div> */}
+            <Button onClick={this.addToBucketList} className="add-to-bucketlist" disabled={localStorage.token ? false : true}>Add to bucketlist</Button>
+            <PhotoContainer destination={this.state}/>
+            <Header className="things-to-do-container-header">Things to Do</Header>
+            <Card.Group className="things-to-do-container">{thingsToDo}</Card.Group>
+            <CommentContainer routerProps={this.props.routerProps} deleteReview={this.deleteReview} createComment={this.createComment} destination={this.state} user={this.props.user} />
+          {/* </div>
+          :
+          <div>
+            <NotFound />
+          </div>
+      } */}
       </div>
     );
   }

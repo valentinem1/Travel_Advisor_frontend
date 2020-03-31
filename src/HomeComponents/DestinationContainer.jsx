@@ -7,7 +7,7 @@ class DestinationContainer extends Component {
 
   render() {
   let destinationCard = this.props.destinations.map(destination =>
-     <Link key={destination.id} to={`/${destination.name}/${destination.id}`}><DestinationCard key={destination.id} destination={destination} routerProps={this.props.routerProps}/></Link>)
+     <Link key={destination.id} to={`/${destination.id}`}><DestinationCard key={destination.id} destination={destination} routerProps={this.props.routerProps}/></Link>)
 
     return (
       <Card.Group className={localStorage.token ? "login-destination-container" : "destination-container"}>

@@ -166,7 +166,7 @@ body{
   background-color: #15ddab;
   width: 5vw;
   margin-left: 1vw;
-  margin-top: -15vw;
+  margin-top: 10vh;
 }
 
 .welcome-message{
@@ -184,8 +184,8 @@ body{
 
 /* when user is login the margin of the destination container is reduced */
 .login-destination-container{
-  margin-left: -3vw !important;
-  margin-top: 20vh !important;
+  margin-left: 8vw !important;
+  margin-top: 8vh !important;
 }
 
 .destination-card{
