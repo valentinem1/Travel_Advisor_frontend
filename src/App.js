@@ -88,6 +88,12 @@ class App extends Component {
     return newArr
   }
 
+  clearSearch = (emptyValue) => {
+    this.setState({
+      search: emptyValue
+    })
+  }
+
   render() {
     let destinationsId = this.state.destinations.map(destination => destination.id)
 
@@ -98,6 +104,7 @@ class App extends Component {
 
         <Switch>
           <Route exact path='/' render={ () => <HomeContainer
+          clearSearch={this.clearSearch}
           destinations={this.filterSearch()}
           search={this.state.search}
           updateSearchForm={this.updateSearchForm}
