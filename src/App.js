@@ -90,8 +90,8 @@ class App extends Component {
 
   render() {
     let destinationsId = this.state.destinations.map(destination => destination.id)
-    return (
 
+    return (
       <div className="page-window">
           <HeaderContainer createNewUser={this.createNewUser} loginUser={this.loginUser} historyProps={this.props} />
           <hr className="header-separation"/>
@@ -110,7 +110,6 @@ class App extends Component {
 
         <Footer />
       </div>
-
     )
   }
 

@@ -59,18 +59,15 @@ Users can sign up or sign in. Upon Sign in users are taken to the home page and 
 
 ![login gif](./src/images/login.gif)<br />
 
-User is able to see a list of items, sort them by price and click on them to be taken to the item show page.<br />
+User is able to see a list of destinations, search for a specific destination and click on them to be taken to the it's show page.<br />
 
-![home page gif](./images/home-page.gif)<br />
+![home page gif](./src/images/home-page.gif)<br />
 
-Once on the item show page the user can add the item to their cart if the item is still available. They can also post and delete their reviews.<br />
+Once on the destination show page the user see more information about the destination and the things to do there. The user can also, add the destination to their bucketlist to save for later. They can also leave a review about and/or delete it<br />
 
-![item show page](./images/item-show-page.gif)<br />
+![item show page](./src/images/destination-show-page.gif)<br />
 
-Once the item is added to the cart the user can see it in their own cart. They can delete it or checkout.<br />
+Once the destination is added to the bucketlist the user can see it on their own profile and delete it if wanted. The user can also see their amount of contributions to the website(reviews), the number of destinations in their bucketlist and delete their profile as well.<br />
 
-![cart](./images/cart-page.gif)<br />
+![profile page](./src/images/profile-page.gif)<br />
 
-Upon checkout the user can see its order on its profile.<br />
-
-![orders](./images/orders.gif)
