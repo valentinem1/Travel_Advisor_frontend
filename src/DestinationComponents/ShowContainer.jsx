@@ -83,26 +83,25 @@ class ShowContainer extends Component {
   render() {
     let { things_to_dos } = this.state
     let thingsToDo = !things_to_dos ? null : things_to_dos.map(thingstodo => <ThingsToDoContainer key={thingstodo.id} thingstodo={thingstodo}/>)
-    // console.log(this.state.id)
+
     return (
       <div>
-        {/* {this.state.id !== undefined && this.state.id === this.props.routerProps.match.params.id ?
-          <div> */}
+        {this.props.destinationsId.includes(parseInt(this.props.routerProps.match.params.id)) ?
+          <div>
             <Button onClick={this.addToBucketList} className="add-to-bucketlist" disabled={localStorage.token ? false : true}>Add to bucketlist</Button>
             <PhotoContainer destination={this.state}/>
             <Header className="things-to-do-container-header">Things to Do</Header>
             <Card.Group className="things-to-do-container">{thingsToDo}</Card.Group>
             <CommentContainer routerProps={this.props.routerProps} deleteReview={this.deleteReview} createComment={this.createComment} destination={this.state} user={this.props.user} />
-          {/* </div>
+          </div>
           :
           <div>
             <NotFound />
           </div>
-      } */}
+        }
       </div>
     );
-  }
-
+  } 
 }
 
 export default ShowContainer;

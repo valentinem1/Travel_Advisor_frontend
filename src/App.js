@@ -105,7 +105,7 @@ class App extends Component {
           user={this.state.user}
           />} />
           <Route exact path='/profile' render={localStorage.token ? (routerProps) => <ProfileContainer routerProps={routerProps} /> : (routerProps) => <NotFound />}/>
-          <Route  path='/:id' render={ (routerProps) => <ShowContainer user={this.state.user} routerProps={routerProps} destinationsId={destinationsId} /> }/>
+          <Route path='/:id' render={ (routerProps) => <ShowContainer user={this.state.user} routerProps={routerProps} destinationsId={destinationsId} /> }/>
         </Switch>
 
         <Footer />
