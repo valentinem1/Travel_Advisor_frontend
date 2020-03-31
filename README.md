@@ -54,3 +54,23 @@ To launch the app you'll have to follow the following steps:
 - Ensure it is running locally on `http://localhost:3000` to view it in the browser
 
 ## Features
+
+Users can sign up or sign in. Upon Sign in users are taken to the home page and gain access to their profile and all other functionalities likes adding to bucketlist, rating a destination and deleting their profile. <br />
+
+![login gif](./src/images/login.gif)<br />
+
+User is able to see a list of items, sort them by price and click on them to be taken to the item show page.<br />
+
+![home page gif](./images/home-page.gif)<br />
+
+Once on the item show page the user can add the item to their cart if the item is still available. They can also post and delete their reviews.<br />
+
+![item show page](./images/item-show-page.gif)<br />
+
+Once the item is added to the cart the user can see it in their own cart. They can delete it or checkout.<br />
+
+![cart](./images/cart-page.gif)<br />
+
+Upon checkout the user can see its order on its profile.<br />
+
+![orders](./images/orders.gif)

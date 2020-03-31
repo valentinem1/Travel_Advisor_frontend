@@ -185,7 +185,7 @@ body{
 /* when user is login the margin of the destination container is reduced */
 .login-destination-container{
   margin-left: 9vw !important;
-  margin-top: 8vh !important;
+  margin-top: 5vh !important;
 }
 
 .destination-card{
