@@ -91,7 +91,6 @@ class ShowContainer extends Component {
     let { things_to_dos } = this.state
     let thingsToDo = !things_to_dos ? null : things_to_dos.map(thingstodo => <ThingsToDoContainer key={thingstodo.id} thingstodo={thingstodo}/>)
 
-    // debugger
     return (
       <div>
         {this.props.destinationsId.includes(parseInt(this.props.routerProps.match.params.id)) ?
