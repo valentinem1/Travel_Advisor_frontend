@@ -38,6 +38,9 @@ class SignUp extends Component {
         localStorage.setItem("token", newUser.token)
         this.props.createNewUser(newUser)
         this.props.history.push("/")
+        this.setState({
+          error: ""
+        })
       }
     })
   }

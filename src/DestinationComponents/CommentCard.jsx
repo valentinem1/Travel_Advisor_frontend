@@ -5,7 +5,6 @@ class CommentCard extends Component {
 
   handleDelete = () => {
     let review_id = this.props.review.id
-    console.log(this)
     this.props.deleteReview(review_id)
   }
 
