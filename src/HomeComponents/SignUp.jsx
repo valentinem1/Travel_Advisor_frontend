@@ -7,7 +7,8 @@ class SignUp extends Component {
     username: "",
     bio:"",
     picture:"",
-    password:""
+    password:"",
+    error: ""
   }
 
   handleAllChange=(evt)=>{
@@ -19,7 +20,7 @@ class SignUp extends Component {
 
   handleSubmit = (evt) => {
     evt.preventDefault()
-    fetch('https://travel-advisor-api.herokuapp.com/users', {
+    fetch('http://localhost:4000/users', {
       method: "POST",
       headers:{
         "Content-Type": "application/json",
@@ -29,11 +30,14 @@ class SignUp extends Component {
     })
     .then(r => r.json())
     .then(newUser => {
-      if (!newUser.error) {
+      if(newUser.error){
+        this.setState({
+          error: newUser.error
+        })
+      }else{
         localStorage.setItem("token", newUser.token)
         this.props.createNewUser(newUser)
         this.props.history.push("/")
-        
       }
     })
   }
@@ -56,7 +60,6 @@ class SignUp extends Component {
                 value={this.state.username}
                 onChange={this.handleAllChange}
               />
-
               <label className="sign-up-login-label"><b>Bio</b></label>
               <Form.Input
                 icon='user'
@@ -93,6 +96,7 @@ class SignUp extends Component {
                 onChange={this.handleAllChange}
               />
             </Form.Field>
+            <p className="invalid-logins">{this.state.error}</p>
             <Form.Field className="sign-up-login-submit-btn" color="black" control={Button}>Sign up</Form.Field>
           </Form>
         </Modal.Description>

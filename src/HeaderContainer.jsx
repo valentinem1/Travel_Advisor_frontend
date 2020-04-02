@@ -30,7 +30,7 @@ class HeaderContainer extends Component {
             </> : 
             <>
             <Modal trigger={<Button className="sign-up-btn">Log in</Button>}>
-              <Login loginUser={this.props.loginUser} history={this.props.historyProps.history}/>
+              <Login error={this.props.error} loginUser={this.props.loginUser} history={this.props.historyProps.history}/>
             </Modal>
             <Modal trigger={<Button className="sign-up-btn">Sign up</Button>}>
             <SignUp createNewUser={this.props.createNewUser} history={this.props.historyProps.history}/>

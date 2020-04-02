@@ -14,11 +14,12 @@ class App extends Component {
   state={
     user: {},
     destinations:[],
-    search: ""
+    search: "",
+    error: ""
   }
 
   componentDidMount() {
-    fetch(`https://travel-advisor-api.herokuapp.com/destinations`)
+    fetch(`http://localhost:4000/destinations`)
     .then(r => r.json())
     .then((destinations) => {
       this.setState({
@@ -27,7 +28,7 @@ class App extends Component {
     })
 
     if(localStorage.token){
-      fetch(`https://travel-advisor-api.herokuapp.com/persist`, {
+      fetch(`http://localhost:4000/persist`, {
         headers: {
           "Authorization": `bearer ${localStorage.token}`
         }
@@ -51,7 +52,7 @@ class App extends Component {
   }
 
   loginUser = (user) => {
-    fetch('https://travel-advisor-api.herokuapp.com//login', {
+    fetch('http://localhost:4000/login', {
       method: "POST",
       headers: {
         "content-type": "application/json"
@@ -60,7 +61,12 @@ class App extends Component {
     })
     .then(r => r.json())
     .then(userData => {
-      if(!userData.error){
+      console.log(userData)
+      if(userData.error){
+        this.setState({
+          error: userData.error
+        })
+      }else{
         localStorage.setItem("token", userData.token)
         this.setState({
           user: userData.user
@@ -99,7 +105,7 @@ class App extends Component {
     // console.log(this.state)
     return (
       <div className="page-window">
-          <HeaderContainer createNewUser={this.createNewUser} loginUser={this.loginUser} historyProps={this.props} />
+          <HeaderContainer error={this.state.error} createNewUser={this.createNewUser} loginUser={this.loginUser} historyProps={this.props} />
           <hr className="header-separation"/>
 
         <Switch>

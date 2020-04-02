@@ -148,6 +148,13 @@ body{
   margin-left: 30vw;
 }
 
+.invalid-logins{
+  text-align: center;
+  color: red;
+  font-weight: bold;
+  width: 15vw;
+}
+
 .search-input{
   width: 35vw;
   font-size: 1.8vw;

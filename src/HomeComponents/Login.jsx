@@ -57,6 +57,7 @@ class Login extends Component {
                             onChange={this.handleAllChange}
                         />
                     </Form.Field>
+                    <p className="invalid-logins">{this.props.error}</p>
                     <Form.Field className="sign-up-login-submit-btn" color="black" control={Button}>Log in</Form.Field>
                     </Form>
             </Modal.Description>
