@@ -96,7 +96,7 @@ class App extends Component {
 
   render() {
     let destinationsId = this.state.destinations.map(destination => destination.id)
-
+    // console.log(this.state)
     return (
       <div className="page-window">
           <HeaderContainer createNewUser={this.createNewUser} loginUser={this.loginUser} historyProps={this.props} />

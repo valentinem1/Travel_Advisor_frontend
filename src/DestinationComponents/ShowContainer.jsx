@@ -3,7 +3,7 @@ import CommentContainer from './CommentContainer'
 import PhotoContainer from './PhotoContainer'
 import ThingsToDoContainer from './ThingsToDoContainer'
 import NotFound from '../NotFound'
-import { Button, Card, Header } from 'semantic-ui-react'
+import { Card, Header } from 'semantic-ui-react'
 
 class ShowContainer extends Component {
 
@@ -61,35 +61,42 @@ class ShowContainer extends Component {
   }
 
   addToBucketList = () => {
-    fetch('http://localhost:4000/add_joiners', {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-        "Authorization": `bearer ${localStorage.token}`
-      },
-      body: JSON.stringify({
-        destination_id: this.state.id
+    let bucketlistDestinationIds = this.props.user.bucketlist.map(bucketlist => bucketlist.destination).map(destination => destination.id)
+
+    if(bucketlistDestinationIds.includes(parseInt(this.props.routerProps.match.params.id))){
+      alert("You already saved it to your bucketlist.")
+    }else{
+      fetch('http://localhost:4000/add_joiners', {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          "Authorization": `bearer ${localStorage.token}`
+        },
+        body: JSON.stringify({
+          destination_id: this.state.id
+        })
       })
-    })
-    .then(r => r.json())
-    .then(add_joiner => {
-      let newAddJoiner = [...this.state.add_joiners, add_joiner]
-      this.setState({
-        add_joiners: newAddJoiner
+      .then(r => r.json())
+      .then(add_joiner => {
+        let newAddJoiner = [...this.state.add_joiners, add_joiner]
+        this.setState({
+          add_joiners: newAddJoiner
+        })
       })
-    })
+    }
   }
 
 
   render() {
     let { things_to_dos } = this.state
     let thingsToDo = !things_to_dos ? null : things_to_dos.map(thingstodo => <ThingsToDoContainer key={thingstodo.id} thingstodo={thingstodo}/>)
-    
+
+    // debugger
     return (
       <div>
         {this.props.destinationsId.includes(parseInt(this.props.routerProps.match.params.id)) ?
           <div>
-            <Button onClick={this.addToBucketList} className="add-to-bucketlist" disabled={localStorage.token ? false : true}>Add to bucketlist</Button>
+            <div onClick={this.addToBucketList} className="add-to-bucketlist" hidden={localStorage.token ? false : true}>+ Add to bucketlist</div>
             <PhotoContainer destination={this.state}/>
             <Header className="things-to-do-container-header">Things to Do</Header>
             <Card.Group className="things-to-do-container">{thingsToDo}</Card.Group>

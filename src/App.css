@@ -237,11 +237,16 @@ body{
   font-size: 1.1vw !important;
   font-family: Trip Sans, Arial, sans-serif !important;
   letter-spacing: -0.05vw !important;
+  margin-top: 2vh !important;
+  margin-right: 2vw;
   margin-left: 87vw !important;
   background-color: #15ddab !important;
   color: #000000 !important;
   border-radius: 3vw !important;
   font-weight: bold !important;
+  padding: 1vw;
+  text-align: center;
+  cursor: pointer;
 }
 
 .add-to-bucketlist:active{
