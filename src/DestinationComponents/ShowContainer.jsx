@@ -96,7 +96,7 @@ class ShowContainer extends Component {
       <div>
         {this.props.destinationsId.includes(parseInt(this.props.routerProps.match.params.id)) ?
           <div>
-            <div onClick={this.addToBucketList} className="add-to-bucketlist" hidden={localStorage.token || !bucketlistDestinationIds.includes(parseInt(this.props.routerProps.match.params.id)) ? false : true}>+ Add to bucketlist</div>
+            <div onClick={this.addToBucketList} className="add-to-bucketlist" hidden={localStorage.token ? false : true}>+ Add to bucketlist</div>
             <PhotoContainer destination={this.state}/>
             <Header className="things-to-do-container-header">Things to Do</Header>
             <Card.Group className="things-to-do-container">{thingsToDo}</Card.Group>
