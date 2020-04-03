@@ -73,10 +73,10 @@ class ShowContainer extends Component {
       })
       .then(r => r.json())
       .then(add_joiner => {
-        let newAddJoiner = [...this.state.add_joiners, add_joiner]
-        this.setState({
-          add_joiners: newAddJoiner
-        })
+          let newAddJoiner = [...this.state.add_joiners, add_joiner]
+          this.setState({
+            add_joiners: newAddJoiner
+          })
       })
   }
 
