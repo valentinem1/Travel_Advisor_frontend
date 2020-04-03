@@ -53,8 +53,8 @@ class App extends Component {
 
   loginUser = (user) => {
     fetch('https://travel-advisor-api.herokuapp.com/login', {
-      method: "POST",
-      headers: {
+      metho4000: "POST",
+      hea4000ers: {
         "content-type": "application/json"
       },
       body: JSON.stringify(user)
