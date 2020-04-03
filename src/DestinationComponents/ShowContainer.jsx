@@ -61,11 +61,11 @@ class ShowContainer extends Component {
   }
 
   addToBucketList = () => {
-    // let bucketlistDestinationIds = this.props.user.bucketlist.map(bucketlist => bucketlist.destination).map(destination => destination.id)
+    let bucketlistDestinationIds = this.props.user.bucketlist.map(bucketlist => bucketlist.destination).map(destination => destination.id)
 
-    // if(bucketlistDestinationIds.includes(parseInt(this.props.routerProps.match.params.id))){
-    //   alert("You already saved it to your bucketlist.")
-    // }
+    if(bucketlistDestinationIds.includes(parseInt(this.props.routerProps.match.params.id))){
+      alert("You already saved it to your bucketlist.")
+    }
     
       fetch('https://travel-advisor-api.herokuapp.com/add_joiners', {
         method: "POST",
